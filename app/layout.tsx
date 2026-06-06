@@ -21,6 +21,8 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const googleAnalyticsId = "G-K6KRVJWG7C";
+
 export const metadata: Metadata = {
   title: "Goutham Arelli | Backend Engineer",
   description:
@@ -40,6 +42,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM-readable portfolio context" />
       </head>
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("js", new Date());
+            gtag("config", "${googleAnalyticsId}");
+          `}
+        </Script>
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
