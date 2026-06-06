@@ -6,8 +6,7 @@ export function StackMatrix() {
     <section id="stack" className="border-b border-ink/15 py-14">
       <SectionHeader
         eyebrow="Stack"
-        title="Tools grouped by how they show up in the work."
-        description="The emphasis is backend delivery, reliability, and system design. MCP and agentic commerce are current exploration areas where I am applying that foundation."
+        title="Technical stack."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {stackGroups.map((group) => (
