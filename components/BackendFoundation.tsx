@@ -25,8 +25,7 @@ export function BackendFoundation() {
           ))}
         </div>
         <div className="mt-7 border-t border-ink/15 pt-5">
-          <h4 className="font-mono text-sm uppercase tracking-[0.18em] text-ink/72">Selected Pine Labs work</h4>
-          <ul className="mt-4 space-y-3">
+          <ul className="space-y-3">
             {pineLabs.bullets.map((bullet) => (
               <li key={bullet} className="flex gap-3 text-base leading-7 text-ink/78">
                 <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-signal" />
