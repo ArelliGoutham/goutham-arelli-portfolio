@@ -27,15 +27,15 @@ export function McpNexusCaseStudy() {
             <ShieldCheck className="h-4 w-4 text-teal" />
             Prototype flow
           </div>
-          <ol className="mt-5">
+          <ol className="relative mt-5">
+            {mcpNexus.flow.length > 1 ? (
+              <span
+                className="pointer-events-none absolute left-[1.375rem] top-[1.375rem] bottom-[1.375rem] border-l border-dashed border-signal/45"
+                aria-hidden="true"
+              />
+            ) : null}
             {mcpNexus.flow.map((node, index) => (
-              <li key={node} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] gap-4 pb-3 last:pb-0">
-                {index < mcpNexus.flow.length - 1 ? (
-                  <span
-                    className="pointer-events-none absolute left-[1.375rem] top-9 bottom-0 border-l border-dashed border-signal/45"
-                    aria-hidden="true"
-                  />
-                ) : null}
+              <li key={node} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-4 pb-3 last:pb-0">
                 <div className="relative flex justify-center">
                   <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-signal/45 bg-paper font-mono text-xs text-signal">
                     {String(index + 1).padStart(2, "0")}
