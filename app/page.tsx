@@ -20,13 +20,13 @@ export default function Home() {
         <BackendFoundation />
       </RevealSection>
       <RevealSection delay={80}>
+        <ExperienceTimeline />
+      </RevealSection>
+      <RevealSection delay={80}>
         <McpDirection />
       </RevealSection>
       <RevealSection delay={80}>
         <McpNexusCaseStudy />
-      </RevealSection>
-      <RevealSection delay={80}>
-        <ExperienceTimeline />
       </RevealSection>
       <RevealSection delay={80}>
         <StackMatrix />
