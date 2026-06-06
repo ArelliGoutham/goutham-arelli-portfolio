@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   title: "Goutham Arelli | Backend Systems and MCP Portfolio",
   description:
     "Backend engineer applying scalable systems experience to MCP research, agentic commerce, and AI-assisted prototyping.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
