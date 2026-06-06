@@ -42,6 +42,12 @@ export function ContactPanel() {
             {profile.phone}
           </span>
           <span>{profile.email}</span>
+          <a href="/llms.txt" className="transition hover:text-teal">
+            llms.txt
+          </a>
+          <a href="/llms-full.txt" className="transition hover:text-teal">
+            llms-full.txt
+          </a>
         </div>
       </div>
     </section>
