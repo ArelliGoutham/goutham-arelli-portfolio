@@ -85,6 +85,7 @@ export function RevealSection({ children, delay = 0 }: RevealSectionProps) {
     <div
       ref={ref}
       className="reveal-section"
+      data-scroll-stop="true"
       data-visible={visible}
       style={{ transitionDelay: `${delay}ms` }}
     >

@@ -11,7 +11,10 @@ const iconMap = {
 
 export function Hero() {
   return (
-    <section className="grid min-h-[72vh] gap-10 border-b border-ink/15 pb-12 pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+    <section
+      data-scroll-stop="true"
+      className="grid min-h-[72vh] gap-10 border-b border-ink/15 pb-12 pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end"
+    >
       <div>
         <p className="font-mono text-xs uppercase tracking-[0.28em] text-signal">Systems dossier</p>
         <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-[1.02] text-ink sm:text-6xl lg:text-7xl">

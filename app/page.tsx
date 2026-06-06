@@ -8,10 +8,12 @@ import { RevealSection } from "@/components/RevealSection";
 import { Shell } from "@/components/Shell";
 import { SignalStrip } from "@/components/SignalStrip";
 import { StackMatrix } from "@/components/StackMatrix";
+import { ScrollController } from "@/components/ScrollController";
 
 export default function Home() {
   return (
     <Shell>
+      <ScrollController />
       <Hero />
       <RevealSection>
         <SignalStrip />
