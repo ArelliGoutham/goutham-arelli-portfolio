@@ -1,6 +1,10 @@
 import { experience } from "@/content/experience";
 import { SectionHeader } from "@/components/SectionHeader";
 
+function getTimelineBullets(item: (typeof experience)[number]) {
+  return "timelineBullets" in item ? item.timelineBullets : item.bullets;
+}
+
 export function ExperienceTimeline() {
   return (
     <section id="experience" className="border-b border-ink/15 py-14">
@@ -19,7 +23,7 @@ export function ExperienceTimeline() {
             </div>
             <div>
               <ul className="space-y-2">
-                {item.bullets.map((bullet) => (
+                {getTimelineBullets(item).map((bullet) => (
                   <li key={bullet} className="flex gap-3 text-base leading-7 text-ink/78">
                     <span className="mt-3 h-px w-5 shrink-0 bg-signal" />
                     <span>{bullet}</span>

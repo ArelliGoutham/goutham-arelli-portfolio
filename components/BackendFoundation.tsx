@@ -1,13 +1,15 @@
-import { CheckCircle2, Gauge, Network, Telescope } from "lucide-react";
+import { CheckCircle2, Gauge, Network, Route, Telescope } from "lucide-react";
 import { experience } from "@/content/experience";
 import { SectionHeader } from "@/components/SectionHeader";
 
 const pineLabs = experience[0];
 
-const proofs = [
-  { icon: Gauge, label: "Throughput", text: "2000+ TPS improvement in EMI Offer Discovery capacity." },
-  { icon: Telescope, label: "Observability", text: "OpenTelemetry Java Agent and custom spans for sharper production diagnostics." },
-  { icon: Network, label: "Reliability", text: "Configurable HTTP clients with timeout, retry, and circuit breaker controls." },
+const pineHighlights = [
+  { icon: Network, label: "Distributed services", text: pineLabs.bullets[0] },
+  { icon: Gauge, label: "Throughput", text: pineLabs.bullets[1] },
+  { icon: Telescope, label: "Observability", text: pineLabs.bullets[2] },
+  { icon: Route, label: "Service reliability", text: pineLabs.bullets[3] },
+  { icon: CheckCircle2, label: "Agentic commerce", text: pineLabs.bullets[4] },
 ];
 
 export function BackendFoundation() {
@@ -33,13 +35,13 @@ export function BackendFoundation() {
           </div>
         </div>
         <div className="grid gap-4">
-          {proofs.map((proof) => (
-            <article key={proof.label} className="rounded-sm border border-ink/15 bg-panel/88 p-4">
+          {pineHighlights.map((highlight) => (
+            <article key={highlight.label} className="rounded-sm border border-ink/15 bg-panel/88 p-4">
               <div className="flex items-start gap-4">
-                <proof.icon className="mt-1 h-5 w-5 shrink-0 text-signal" />
+                <highlight.icon className="mt-1 h-5 w-5 shrink-0 text-signal" />
                 <div>
-                  <h4 className="font-mono text-sm uppercase tracking-[0.18em] text-ink/72">{proof.label}</h4>
-                  <p className="mt-2 text-base leading-7 text-ink/78">{proof.text}</p>
+                  <h4 className="font-mono text-sm uppercase tracking-[0.18em] text-ink/72">{highlight.label}</h4>
+                  <p className="mt-2 text-base leading-7 text-ink/78">{highlight.text}</p>
                 </div>
               </div>
             </article>
