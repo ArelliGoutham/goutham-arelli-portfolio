@@ -9,8 +9,8 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 - Home: positioning, contact links, and resume download.
 - Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, reliability, and agentic commerce.
 - AI-assisted engineering direction: using LLM tools to move faster while still thinking about architecture, scale, security, and maintainable system design.
-- MCP Nexus: AI-assisted research prototype for an MCP gateway and connector marketplace.
-- Experience Timeline: Pine Labs, Eduspeed Technologies, and Cognizant.
+- MCP Nexus: AI-assisted research prototype for a secure gateway over multiple registered provider MCPs.
+- Experience Timeline: Eduspeed Technologies and Cognizant.
 - Stack: backend, scale/reliability, AI/MCP exploration, databases, and frontend.
 
 ## Key Signals
@@ -22,7 +22,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 
 ## MCP Nexus Caveat
 
-MCP Nexus is an AI-assisted research prototype, not a production SaaS claim. It was built after deep exploration of MCP gateways, connector marketplaces, provider onboarding, tool permissions, governance, and secure agent-tool interaction patterns.
+MCP Nexus is an AI-assisted research prototype, not a production SaaS claim. It started as a secure gateway where multiple provider MCPs can be registered once and exposed to AI clients through one controlled layer. Governance became the safety layer around that gateway: provider onboarding, tool permissions, token boundaries, auditability, rate limits, and confirmation flows.
 
 The work demonstrates architecture-led prototyping, research direction, workflow design, and AI-assisted implementation speed.
 

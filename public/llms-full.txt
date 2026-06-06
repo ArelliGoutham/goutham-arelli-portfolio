@@ -70,15 +70,15 @@ Important work:
 
 ## MCP Nexus
 
-MCP Nexus is an AI-assisted research prototype for a secure MCP gateway and connector marketplace concept.
+MCP Nexus is an AI-assisted research prototype for a secure gateway over multiple registered provider MCPs.
 
 Problem:
 
-AI clients need a governed way to connect to third-party MCP providers without every user managing fragmented integrations and permissions manually.
+AI clients can connect to many MCP servers, but direct one-off integrations make provider discovery, tool permissions, tokens, and auditability fragmented.
 
 Approach:
 
-Explore a managed connector layer with provider onboarding, tool discovery, validation jobs, permission gates, and admin review workflows.
+Prototype a gateway that registers provider MCPs, routes approved tool calls to the right server, and adds governance controls such as validation, permissions, audit logs, rate limits, and confirmations.
 
 Ownership:
 
@@ -87,9 +87,9 @@ Goutham owned the product architecture, system flow, research direction, prompts
 Prototype flow:
 
 1. AI Client
-2. Managed Connector
-3. Tool Registry
-4. Provider MCP Server
+2. MCP Nexus Gateway
+3. Tool Registry + Policy
+4. Registered Provider MCPs
 5. Governed Tool Result
 
 Important caveat:
