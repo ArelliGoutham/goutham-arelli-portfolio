@@ -36,5 +36,7 @@ The site includes:
 - `public/llms.txt`
 - `public/llms-full.txt`
 - `app/sitemap.ts`
+- `app/robots.ts`
+- HTML `<link rel="alternate">` tags for `/llms.txt` and `/llms-full.txt`
 
 Set `NEXT_PUBLIC_SITE_URL` in Vercel after the production URL is known. If unset, the sitemap falls back to `https://goutham-arelli.vercel.app`.

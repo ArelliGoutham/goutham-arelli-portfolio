@@ -29,6 +29,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM-readable portfolio context" />
+      </head>
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
     </html>
   );
