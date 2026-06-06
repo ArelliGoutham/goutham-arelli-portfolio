@@ -526,7 +526,7 @@ export function Hero() {
         <div className="mt-5 space-y-4 text-base leading-7 text-ink/82">
           <p>Production foundation: high-throughput backend services, observability, caching, and reliability patterns.</p>
           <p>Emerging direction: MCP research, agentic commerce, secure workflow exploration, and Codex-assisted execution.</p>
-          <p className="font-mono text-sm text-signal">Backend systems first. AI-agent infrastructure next.</p>
+          <p className="font-mono text-sm text-signal">Applying backend experience to practical MCP and agent workflows.</p>
         </div>
       </div>
     </section>
