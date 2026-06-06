@@ -32,12 +32,12 @@ export function McpNexusCaseStudy() {
               <li key={node} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] gap-4 pb-3 last:pb-0">
                 {index < mcpNexus.flow.length - 1 ? (
                   <span
-                    className="pointer-events-none absolute left-[1.375rem] top-11 bottom-0 border-l border-dashed border-signal/45"
+                    className="pointer-events-none absolute left-[1.375rem] top-9 bottom-0 border-l border-dashed border-signal/45"
                     aria-hidden="true"
                   />
                 ) : null}
                 <div className="relative flex justify-center">
-                  <span className="relative z-10 flex h-11 w-9 items-center justify-center rounded-sm border border-signal/45 bg-paper font-mono text-xs text-signal">
+                  <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-signal/45 bg-paper font-mono text-xs text-signal">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
