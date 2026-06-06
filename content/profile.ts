@@ -11,7 +11,7 @@ export const profile = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/goutham-arelli/" },
     { label: "GitHub", href: "https://github.com/ArelliGoutham" },
     { label: "Scaler", href: "https://scaler.com/academy/profile/0446f67c7dc7" },
-    { label: "Resume", href: "/goutham_arelli_resume_ai_platform.pdf" },
+    { label: "Resume", href: "/goutham_arelli_resume.pdf" },
   ],
   signals: [
     { value: "4+", label: "years backend experience" },

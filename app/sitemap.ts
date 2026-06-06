@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${siteUrl}/goutham_arelli_resume_ai_platform.pdf`,
+      url: `${siteUrl}/goutham_arelli_resume.pdf`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,

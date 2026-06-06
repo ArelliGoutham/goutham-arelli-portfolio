@@ -28,7 +28,7 @@ The work demonstrates architecture-led prototyping, research direction, workflow
 
 ## Important Links
 
-- Resume PDF: /goutham_arelli_resume_ai_platform.pdf
+- Resume PDF: /goutham_arelli_resume.pdf
 - Fuller LLM context: /llms-full.txt
 - LinkedIn: https://www.linkedin.com/in/goutham-arelli/
 - GitHub: https://github.com/ArelliGoutham

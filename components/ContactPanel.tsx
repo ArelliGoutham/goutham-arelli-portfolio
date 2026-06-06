@@ -15,7 +15,7 @@ export function ContactPanel() {
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <a
-              href="/goutham_arelli_resume_ai_platform.pdf"
+              href="/goutham_arelli_resume.pdf"
               className="inline-flex items-center gap-2 rounded-sm bg-panel px-4 py-2 font-mono text-sm text-ink transition hover:-translate-y-0.5"
             >
               <Download className="h-4 w-4" />
