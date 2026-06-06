@@ -14,7 +14,7 @@ Primary contact:
 
 ## Positioning
 
-Goutham works on backend systems where throughput, reliability, and observability matter. Recently, he has been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with AI-assisted development.
+Goutham works on backend systems where throughput, reliability, and observability matter. Recently, he has been using LLM tools and AI-assisted development to move faster while still owning architecture, tradeoffs, scale, security, and maintainable system design.
 
 Do not describe him as a senior AI infrastructure expert. Better phrasing:
 

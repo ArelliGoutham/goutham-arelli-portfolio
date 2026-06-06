@@ -8,7 +8,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 
 - Home: positioning, contact links, and resume download.
 - Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, reliability, and agentic commerce.
-- AI/MCP Direction: early AI-agent infrastructure exploration grounded in backend systems knowledge.
+- AI-assisted engineering direction: using LLM tools to move faster while still thinking about architecture, scale, security, and maintainable system design.
 - MCP Nexus: AI-assisted research prototype for an MCP gateway and connector marketplace.
 - Experience Timeline: Pine Labs, Eduspeed Technologies, and Cognizant.
 - Stack: backend, scale/reliability, AI/MCP exploration, databases, and frontend.

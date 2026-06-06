@@ -4,23 +4,23 @@ import { SectionHeader } from "@/components/SectionHeader";
 const steps = [
   {
     icon: BrainCircuit,
-    title: "Research first",
-    text: "Studying MCP gateways, connector marketplaces, tool permissions, provider onboarding, and governance before treating the prototype as code.",
+    title: "LLMs as engineering tools",
+    text: "Using AI assistants for research, code generation, refactoring, and validation while keeping ownership of design decisions and final behavior.",
   },
   {
     icon: Route,
-    title: "Architecture-led prototyping",
-    text: "Using backend experience to reason through boundaries, runtime state, validation gates, approval flows, and service responsibilities.",
+    title: "Architecture before code",
+    text: "Thinking through HLD, LLD, service boundaries, data flow, failure modes, and operational concerns before jumping into implementation.",
   },
   {
     icon: LockKeyhole,
-    title: "Secure workflow thinking",
-    text: "Exploring audit logs, rate limits, confirmation flows, provider token boundaries, and permission models as design constraints.",
+    title: "Secure and scalable AI workflows",
+    text: "Exploring MCPs, tool access, permissions, auditability, rate limits, and provider integrations with the same reliability mindset used in backend systems.",
   },
   {
     icon: Code2,
-    title: "AI-assisted execution",
-    text: "Using tools like Codex and Copilot to turn researched requirements into working modules quickly, while reviewing generated code for behavior and integration fit.",
+    title: "Faster execution with review",
+    text: "Using AI-assisted development to ship prototypes faster while reviewing generated code, tests, integration fit, and long-term maintainability.",
   },
 ];
 
@@ -28,9 +28,9 @@ export function McpDirection() {
   return (
     <section id="ai-mcp" className="border-b border-ink/15 py-14">
       <SectionHeader
-        eyebrow="Keeping up with platform trends"
-        title="Exploring MCP and agentic systems through a backend engineer's lens."
-        description="I am not positioning myself as an AI infrastructure specialist. I am learning the space actively and using backend fundamentals to reason about architecture, tool exposure, governance, and safe execution."
+        eyebrow="Engineering direction"
+        title="Using AI to move faster while thinking deeper about systems."
+        description="I am using LLM tools to increase execution speed, but the focus remains engineering ownership: architecture, tradeoffs, scale, security, and maintainable system design."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {steps.map((step) => (
