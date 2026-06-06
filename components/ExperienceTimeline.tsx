@@ -7,7 +7,6 @@ export function ExperienceTimeline() {
       <SectionHeader
         eyebrow="Timeline"
         title="Systems experience across payments, EdTech, and telecom."
-        description="The roles form a progression from full-stack delivery to backend performance, reliability, and platform-oriented work."
       />
       <div className="space-y-5">
         {experience.map((item) => (
