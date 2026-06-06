@@ -321,7 +321,7 @@ export const profile = {
   email: "arelligoutham@gmail.com",
   headline: "Backend Engineer applying scalable systems experience to AI-agent infrastructure.",
   summary:
-    "I build production backend systems around scalability, reliability, and observability. Recently I have been applying that foundation to MCP research, agentic commerce concepts, and Codex-assisted prototyping - using AI not just to write code, but to explore architecture, validate workflows, and get working systems shipped faster.",
+    "I build production backend systems around scalability, reliability, and observability. Recently I have been applying that foundation to MCP research, agentic commerce concepts, and AI-assisted prototyping - using AI not just to write code, but to explore architecture, validate workflows, and get working systems shipped faster.",
   links: [
     { label: "Email", href: "mailto:arelligoutham@gmail.com" },
     { label: "LinkedIn", href: "#" },
@@ -399,7 +399,7 @@ export const mcpNexus = {
   approach:
     "Explore a managed connector layer with provider onboarding, tool discovery, validation jobs, permission gates, and admin review workflows.",
   ownership:
-    "Owned the product architecture, system flow, research direction, prompts, and integration behavior while using Codex to accelerate implementation.",
+    "Owned the product architecture, system flow, research direction, prompts, and integration behavior while using AI-assisted development to accelerate implementation.",
   flow: ["AI Client", "Managed Connector", "Tool Registry", "Provider MCP Server", "Governed Tool Result"],
   bullets: [
     "Built an AI-assisted TypeScript monorepo prototype for a Model Context Protocol gateway.",
@@ -418,7 +418,7 @@ Create `content/stack.ts`:
 export const stackGroups = [
   { title: "Backend", items: ["Java", "Kotlin", "Spring Boot", "Node.js", "Express.js", "Fastify", "REST APIs", "Microservices"] },
   { title: "Scale / Reliability", items: ["Kotlin Coroutines", "Caching", "Circuit Breakers", "Retry Policies", "Timeout Management", "OpenTelemetry", "Distributed Tracing"] },
-  { title: "AI / MCP Exploration", items: ["Model Context Protocol", "MCP Servers", "Agentic Commerce", "Tool Permissions", "Provider Onboarding", "Codex-Assisted Prototyping"] },
+  { title: "AI / MCP Exploration", items: ["Model Context Protocol", "MCP Servers", "Agentic Commerce", "Tool Permissions", "Provider Onboarding", "AI-Assisted Prototyping"] },
   { title: "Databases / Frontend", items: ["MySQL", "PostgreSQL", "Redis", "Angular", "React", "Next.js"] },
 ] as const;
 ```
@@ -525,7 +525,7 @@ export function Hero() {
         </div>
         <div className="mt-5 space-y-4 text-base leading-7 text-ink/82">
           <p>Production foundation: high-throughput backend services, observability, caching, and reliability patterns.</p>
-          <p>Emerging direction: MCP research, agentic commerce, secure workflow exploration, and Codex-assisted execution.</p>
+          <p>Emerging direction: MCP research, agentic commerce, secure workflow exploration, and AI-assisted execution.</p>
           <p className="font-mono text-sm text-signal">Applying backend experience to practical MCP and agent workflows.</p>
         </div>
       </div>
@@ -542,7 +542,7 @@ Implementation requirements:
 
 - `SignalStrip` maps `profile.signals`.
 - `BackendFoundation` highlights the Pine Labs item from `experience[0]`.
-- `McpDirection` explains beginner-to-practitioner AI/MCP trajectory and Codex-assisted architecture exploration.
+- `McpDirection` explains beginner-to-practitioner AI/MCP trajectory and AI-assisted architecture exploration.
 - `McpNexusCaseStudy` maps `mcpNexus.flow` into connected protocol nodes and maps `mcpNexus.bullets`.
 - `ExperienceTimeline` maps all `experience`.
 - `StackMatrix` maps `stackGroups`.

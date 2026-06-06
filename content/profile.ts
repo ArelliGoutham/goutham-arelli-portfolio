@@ -5,7 +5,7 @@ export const profile = {
   email: "arelligoutham@gmail.com",
   headline: "Backend Engineer focused on scalable systems, reliability, and emerging agentic workflows.",
   summary:
-    "I work on backend systems where throughput, reliability, and observability matter. Recently I have been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with Codex-assisted development.",
+    "I work on backend systems where throughput, reliability, and observability matter. Recently I have been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with AI-assisted development.",
   links: [
     { label: "Email", href: "mailto:arelligoutham@gmail.com" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/goutham-arelli/" },

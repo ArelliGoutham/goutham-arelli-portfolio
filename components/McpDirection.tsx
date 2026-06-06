@@ -19,8 +19,8 @@ const steps = [
   },
   {
     icon: Code2,
-    title: "Codex-assisted execution",
-    text: "Using Codex to turn researched requirements into working modules quickly, while reviewing generated code for behavior and integration fit.",
+    title: "AI-assisted execution",
+    text: "Using tools like Codex and Copilot to turn researched requirements into working modules quickly, while reviewing generated code for behavior and integration fit.",
   },
 ];
 

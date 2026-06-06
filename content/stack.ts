@@ -23,7 +23,7 @@ export const stackGroups = [
       "Agentic Commerce",
       "Tool Permissions",
       "Provider Onboarding",
-      "Codex-Assisted Prototyping",
+      "AI-Assisted Prototyping",
     ],
   },
   {

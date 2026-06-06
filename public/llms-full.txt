@@ -14,13 +14,13 @@ Primary contact:
 
 ## Positioning
 
-Goutham works on backend systems where throughput, reliability, and observability matter. Recently, he has been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with Codex-assisted development.
+Goutham works on backend systems where throughput, reliability, and observability matter. Recently, he has been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with AI-assisted development.
 
 Do not describe him as a senior AI infrastructure expert. Better phrasing:
 
 - Backend engineer applying scalable systems experience to MCP and agentic workflows.
 - Early AI-agent infrastructure exploration grounded in production backend experience.
-- Architecture-led MCP prototyping with Codex-assisted development.
+- Architecture-led MCP prototyping with AI-assisted development.
 - Secure workflow exploration for agent-tool interaction patterns.
 
 ## Production Backend Foundation
@@ -82,7 +82,7 @@ Explore a managed connector layer with provider onboarding, tool discovery, vali
 
 Ownership:
 
-Goutham owned the product architecture, system flow, research direction, prompts, and integration behavior while using Codex to accelerate implementation.
+Goutham owned the product architecture, system flow, research direction, prompts, and integration behavior while using AI-assisted development to accelerate implementation.
 
 Prototype flow:
 
@@ -126,7 +126,7 @@ AI/MCP exploration:
 - Agentic Commerce
 - Tool Permissions
 - Provider Onboarding
-- Codex-Assisted Prototyping
+- AI-Assisted Prototyping
 
 Databases and frontend:
 

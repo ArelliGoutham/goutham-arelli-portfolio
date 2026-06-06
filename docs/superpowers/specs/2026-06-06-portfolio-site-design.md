@@ -4,7 +4,7 @@
 
 Build a Vercel-deployable personal portfolio for Goutham Arelli that expands beyond a one-page resume. The site should help engineering interviewers understand the systems behind the resume: scalable backend work, reliability improvements, production observability, agentic commerce exposure, and an emerging MCP/AI-agent infrastructure direction.
 
-The site should not present Goutham as a senior AI infrastructure expert. It should present him as a backend engineer with production systems experience who is now applying that foundation to MCP research, agentic commerce concepts, secure workflow thinking, and Codex-assisted prototyping.
+The site should not present Goutham as a senior AI infrastructure expert. It should present him as a backend engineer with production systems experience who is now applying that foundation to MCP research, agentic commerce concepts, secure workflow thinking, and AI-assisted prototyping.
 
 ## Primary Audience
 
@@ -23,13 +23,13 @@ Primary headline:
 
 Supporting narrative:
 
-> I have production backend experience in scalable microservices, observability, reliability, and distributed workflows. I am now applying that foundation to AI-agent infrastructure through MCP research, agentic commerce concepts, and Codex-assisted prototyping, using AI not just to write code but to explore architecture, validate workflows, and ship working systems faster.
+> I have production backend experience in scalable microservices, observability, reliability, and distributed workflows. I am now applying that foundation to AI-agent infrastructure through MCP research, agentic commerce concepts, and AI-assisted prototyping, using AI not just to write code but to explore architecture, validate workflows, and ship working systems faster.
 
 The site should emphasize three layers:
 
 1. **Production Backend Foundation** - Pine Labs, EMI scale, microservices, observability, reliability.
 2. **AI/MCP Learning Trajectory** - beginner-to-practitioner journey using backend knowledge to understand MCP systems and agent workflows.
-3. **Execution Proof** - MCP Nexus researched, designed, and built quickly with Codex-assisted development.
+3. **Execution Proof** - MCP Nexus researched, designed, and built quickly with AI-assisted development.
 
 ## Honesty Constraints
 
@@ -47,7 +47,7 @@ Preferred phrasing:
 - AI-assisted research prototype
 - Architecture-led prototyping
 - Secure workflow exploration
-- Codex-assisted development for faster system execution
+- AI-assisted development for faster system execution
 - Early AI-agent infrastructure work grounded in production backend experience
 
 MCP Nexus should be framed as:
@@ -78,7 +78,7 @@ Use a polished one-page homepage for v1, with content sections deep enough that 
 
 4. **AI/MCP Direction**
    - Explain the shift into MCP and agentic workflows as a learning and building direction.
-   - Make clear that Codex is used for architecture exploration, implementation acceleration, and iteration.
+   - Make clear that AI-assisted tools are used for architecture exploration, implementation acceleration, and iteration.
    - Avoid implying deep expertise in every underlying security or auth concept.
 
 5. **MCP Nexus Case Study**
@@ -88,7 +88,7 @@ Use a polished one-page homepage for v1, with content sections deep enough that 
      - Approach: managed connector layer, provider onboarding, tool discovery, validation gates.
      - Architecture thinking: portals, registry, runtime state, permissions, review flows.
      - Secure workflow exploration: audit logs, rate limits, confirmation flows, token boundaries as concepts.
-     - Codex-assisted execution: prompts, code generation, review, iteration, integration behavior.
+     - AI-assisted execution: prompts, code generation, review, iteration, integration behavior.
    - Include a compact system-flow visual.
 
 6. **Experience Timeline**

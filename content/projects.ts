@@ -8,7 +8,7 @@ export const mcpNexus = {
   approach:
     "Explore a managed connector layer with provider onboarding, tool discovery, validation jobs, permission gates, and admin review workflows.",
   ownership:
-    "Owned the product architecture, system flow, research direction, prompts, and integration behavior while using Codex to accelerate implementation.",
+    "Owned the product architecture, system flow, research direction, prompts, and integration behavior while using AI-assisted development to accelerate implementation.",
   flow: ["AI Client", "Managed Connector", "Tool Registry", "Provider MCP Server", "Governed Tool Result"],
   bullets: [
     "Built an AI-assisted TypeScript monorepo prototype for a Model Context Protocol gateway.",

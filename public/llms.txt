@@ -24,7 +24,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 
 MCP Nexus is an AI-assisted research prototype, not a production SaaS claim. It was built after deep exploration of MCP gateways, connector marketplaces, provider onboarding, tool permissions, governance, and secure agent-tool interaction patterns.
 
-The work demonstrates architecture-led prototyping, research direction, workflow design, and Codex-assisted implementation speed.
+The work demonstrates architecture-led prototyping, research direction, workflow design, and AI-assisted implementation speed.
 
 ## Important Links
 
