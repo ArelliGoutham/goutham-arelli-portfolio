@@ -205,3 +205,22 @@ These can be decided during the implementation plan:
 - Whether to use a single-page site only or include `/mcp-nexus` immediately.
 - Whether to use locally bundled fonts or remote Google Fonts.
 - Whether to add a simple architecture diagram as HTML/CSS or SVG.
+
+## Phase 2: LLM-Readable Site Map
+
+After the v1 site is deployed, add lightweight machine-readable discovery files:
+
+- `public/llms.txt` - a curated Markdown overview of the site for LLMs and AI agents.
+- `public/sitemap.xml` - standard search-engine sitemap for deployed routes.
+- Optional `public/llms-full.txt` - a fuller plain-text version of the portfolio if the case study grows.
+
+The `llms.txt` file should summarize:
+
+- Who Goutham is.
+- What roles the site is relevant for.
+- The main pages or sections.
+- The MCP Nexus research prototype.
+- Resume and contact links.
+- Clear caveat that the MCP work is AI-assisted research/prototyping, not a production SaaS claim.
+
+This should remain a small static addition and should not block the first Vercel deployment.
