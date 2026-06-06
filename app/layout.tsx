@@ -21,7 +21,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Goutham Arelli | Backend Systems and MCP Portfolio",
+  title: "Goutham Arelli | Backend Engineer",
   description:
     "Backend engineer applying scalable systems experience to MCP research, agentic commerce, and AI-assisted prototyping.",
   icons: {
