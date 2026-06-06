@@ -27,18 +27,21 @@ export function McpNexusCaseStudy() {
             <ShieldCheck className="h-4 w-4 text-teal" />
             Prototype flow
           </div>
-          <ol className="mt-5 grid gap-3">
+          <ol className="mt-5">
             {mcpNexus.flow.map((node, index) => (
-              <li key={node} className="grid grid-cols-[2.75rem_1fr] gap-3">
+              <li key={node} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] gap-4 pb-3 last:pb-0">
+                {index < mcpNexus.flow.length - 1 ? (
+                  <span
+                    className="pointer-events-none absolute left-[1.375rem] top-11 bottom-0 border-l border-dashed border-signal/45"
+                    aria-hidden="true"
+                  />
+                ) : null}
                 <div className="relative flex justify-center">
-                  <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-sm border border-signal/45 bg-paper font-mono text-xs text-signal">
+                  <span className="relative z-10 flex h-11 w-9 items-center justify-center rounded-sm border border-signal/45 bg-paper font-mono text-xs text-signal">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  {index < mcpNexus.flow.length - 1 ? (
-                    <span className="absolute top-9 -bottom-3 w-px bg-ink/18" aria-hidden="true" />
-                  ) : null}
                 </div>
-                <div className="min-w-0 flex-1 rounded-sm border border-ink/15 bg-paper px-4 py-3 font-mono text-sm text-ink">
+                <div className="flex min-h-11 min-w-0 items-center rounded-sm border border-ink/15 bg-paper px-4 py-3 font-mono text-sm text-ink">
                   {node}
                 </div>
               </li>
