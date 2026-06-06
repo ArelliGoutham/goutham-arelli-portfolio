@@ -1,19 +1,17 @@
 import { experience } from "@/content/experience";
 import { SectionHeader } from "@/components/SectionHeader";
 
-function getTimelineBullets(item: (typeof experience)[number]) {
-  return "timelineBullets" in item ? item.timelineBullets : item.bullets;
-}
+const timelineExperience = experience.filter((item) => item.company !== "Pine Labs");
 
 export function ExperienceTimeline() {
   return (
     <section id="experience" className="border-b border-ink/15 py-14">
       <SectionHeader
         eyebrow="Timeline"
-        title="Systems experience across payments, EdTech, and telecom."
+        title="Previous systems experience across EdTech and telecom."
       />
       <div className="space-y-5">
-        {experience.map((item) => (
+        {timelineExperience.map((item) => (
           <article key={item.company} className="grid gap-4 rounded-sm border border-ink/15 bg-panel/88 p-5 lg:grid-cols-[0.34fr_0.66fr]">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">{item.period}</p>
@@ -23,7 +21,7 @@ export function ExperienceTimeline() {
             </div>
             <div>
               <ul className="space-y-2">
-                {getTimelineBullets(item).map((bullet) => (
+                {item.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-3 text-base leading-7 text-ink/78">
                     <span className="mt-3 h-px w-5 shrink-0 bg-signal" />
                     <span>{bullet}</span>

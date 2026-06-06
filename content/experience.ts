@@ -12,10 +12,6 @@ export const experience = [
       "Built a modular HTTP Client Factory with configurable timeouts, retries, and circuit breaker controls.",
       "Contributed to agentic commerce flows where merchants expose catalog, cart, checkout, payments, and order workflows through a common protocol.",
     ],
-    timelineBullets: [
-      "Current payments backend role across EMI workflows, service reliability, and observability.",
-      "Work is trending deeper into system design, throughput thinking, operational visibility, and AI-assisted commerce workflows.",
-    ],
   },
   {
     company: "Eduspeed Technologies",
