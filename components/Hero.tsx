@@ -22,10 +22,13 @@ export function Hero() {
         <div className="mt-8 flex flex-wrap gap-3">
           {profile.links.map((link) => {
             const Icon = iconMap[link.label as keyof typeof iconMap];
+            const opensNewTab = !link.href.startsWith("mailto:");
             return (
               <a
                 key={link.label}
                 href={link.href}
+                target={opensNewTab ? "_blank" : undefined}
+                rel={opensNewTab ? "noreferrer" : undefined}
                 className="inline-flex items-center gap-2 rounded-sm border border-ink/20 bg-panel px-4 py-2 font-mono text-sm text-ink shadow-dossier transition hover:-translate-y-0.5 hover:border-signal hover:text-signal"
               >
                 <Icon className="h-4 w-4" />

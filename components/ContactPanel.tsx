@@ -16,6 +16,8 @@ export function ContactPanel() {
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <a
               href="/goutham_arelli_resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-panel px-4 py-2 font-mono text-sm text-ink transition hover:-translate-y-0.5"
             >
               <Download className="h-4 w-4" />
@@ -25,11 +27,21 @@ export function ContactPanel() {
               <Mail className="h-4 w-4" />
               Email
             </a>
-            <a href="https://www.linkedin.com/in/goutham-arelli/" className="inline-flex items-center gap-2 rounded-sm border border-panel/25 px-4 py-2 font-mono text-sm transition hover:border-teal hover:text-teal">
+            <a
+              href="https://www.linkedin.com/in/goutham-arelli/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-panel/25 px-4 py-2 font-mono text-sm transition hover:border-teal hover:text-teal"
+            >
               <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
-            <a href="https://github.com/ArelliGoutham" className="inline-flex items-center gap-2 rounded-sm border border-panel/25 px-4 py-2 font-mono text-sm transition hover:border-teal hover:text-teal">
+            <a
+              href="https://github.com/ArelliGoutham"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-panel/25 px-4 py-2 font-mono text-sm transition hover:border-teal hover:text-teal"
+            >
               <Github className="h-4 w-4" />
               GitHub
             </a>
