@@ -1,0 +1,35 @@
+# Goutham Arelli
+
+> Backend Engineer applying scalable systems experience to AI-agent infrastructure.
+
+This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderabad, India. It is most relevant for backend engineering, platform engineering, distributed systems, payments/commerce backend, and AI-adjacent engineering roles.
+
+## Site Sections
+
+- Home: positioning, contact links, and resume download.
+- Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, reliability, and agentic commerce.
+- AI/MCP Direction: early AI-agent infrastructure exploration grounded in backend systems knowledge.
+- MCP Nexus: AI-assisted research prototype for an MCP gateway and connector marketplace.
+- Experience Timeline: Pine Labs, Eduspeed Technologies, and Cognizant.
+- Stack: backend, scale/reliability, AI/MCP exploration, databases, and frontend.
+
+## Key Signals
+
+- 4+ years backend/full-stack engineering experience.
+- 2000+ TPS EMI Offer Discovery capacity improvement.
+- 50% backend-call reduction through caching and lazy loading.
+- Current direction: MCP research, agentic commerce concepts, and Codex-assisted prototyping.
+
+## MCP Nexus Caveat
+
+MCP Nexus is an AI-assisted research prototype, not a production SaaS claim. It was built after deep exploration of MCP gateways, connector marketplaces, provider onboarding, tool permissions, governance, and secure agent-tool interaction patterns.
+
+The work demonstrates architecture-led prototyping, research direction, workflow design, and Codex-assisted implementation speed.
+
+## Important Links
+
+- Resume PDF: /goutham_arelli_resume_ai_platform.pdf
+- Fuller LLM context: /llms-full.txt
+- LinkedIn: https://www.linkedin.com/in/goutham-arelli/
+- GitHub: https://github.com/ArelliGoutham
+- Email: arelligoutham@gmail.com

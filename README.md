@@ -29,10 +29,12 @@ npm run build
 
 The output is handled by Next.js.
 
-## Phase 2
+## LLM and Search Discovery
 
-After the first deployment, add:
+The site includes:
 
 - `public/llms.txt`
-- `public/sitemap.xml`
-- optional `public/llms-full.txt`
+- `public/llms-full.txt`
+- `app/sitemap.ts`
+
+Set `NEXT_PUBLIC_SITE_URL` in Vercel after the production URL is known. If unset, the sitemap falls back to `https://goutham-arelli.vercel.app`.

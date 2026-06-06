@@ -1,0 +1,138 @@
+# Goutham Arelli Portfolio Context
+
+## Identity
+
+Goutham Arelli is a backend engineer in Hyderabad, India. His portfolio positions him as a backend engineer applying scalable systems experience to AI-agent infrastructure.
+
+Primary contact:
+
+- Email: arelligoutham@gmail.com
+- Phone: +91-7396437155
+- LinkedIn: https://www.linkedin.com/in/goutham-arelli/
+- GitHub: https://github.com/ArelliGoutham
+- Resume PDF: /goutham_arelli_resume_ai_platform.pdf
+
+## Positioning
+
+Goutham builds production backend systems around scalability, reliability, and observability. Recently, he has been applying that foundation to MCP research, agentic commerce concepts, and Codex-assisted prototyping. His AI direction should be understood as early AI-agent infrastructure work grounded in backend systems experience.
+
+Do not describe him as a senior AI infrastructure expert. Better phrasing:
+
+- Backend engineer applying scalable systems experience to MCP and agentic workflows.
+- Early AI-agent infrastructure exploration grounded in production backend experience.
+- Architecture-led MCP prototyping with Codex-assisted development.
+- Secure workflow exploration for agent-tool interaction patterns.
+
+## Production Backend Foundation
+
+### Pine Labs
+
+Role: Backend Engineer
+Period: May 2025 - Present
+
+Focus areas:
+
+- High-throughput EMI systems.
+- Distributed microservices.
+- Production observability.
+- HTTP client reliability.
+- Agentic commerce workflows.
+
+Important work:
+
+- Designed and scaled distributed microservices for EMI workflows across high-volume payment systems.
+- Increased EMI Offer Discovery capacity by 2000+ TPS using Kotlin coroutine-based concurrency, caching improvements, and refined content negotiation plugins.
+- Improved production observability with OpenTelemetry Java Agent and custom span attributes for granular metric and trace analysis.
+- Built a modular HTTP Client Factory with configurable timeouts, retries, and circuit breaker controls.
+- Contributed to agentic commerce flows where merchants expose catalog, cart, checkout, payments, and order workflows through a common protocol.
+
+### Eduspeed Technologies
+
+Role: FullStack Engineer
+Period: Jan 2024 - Jul 2024
+
+Important work:
+
+- Built and enhanced an EdTech platform across coaching center and assessment workflows.
+- Reduced backend calls by 50% through caching, lazy loading, and resource-saving frontend/backend interaction patterns.
+- Designed optimized database schemas and bulk update mechanisms, improving large dataset handling efficiency by 30%.
+
+### Cognizant
+
+Role: Software Development Engineer (Full Stack)
+Period: Aug 2021 - Jan 2024
+
+Important work:
+
+- Designed and developed a full-stack telecom solution that centralized customer data and reduced query resolution time by 40%.
+- Architected scalable Spring Boot microservices using MVC design and SOLID principles.
+- Implemented JWT authentication, Eureka Server, API Gateway, and a responsive Angular frontend.
+
+## MCP Nexus
+
+MCP Nexus is an AI-assisted research prototype for a secure MCP gateway and connector marketplace concept.
+
+Problem:
+
+AI clients need a governed way to connect to third-party MCP providers without every user managing fragmented integrations and permissions manually.
+
+Approach:
+
+Explore a managed connector layer with provider onboarding, tool discovery, validation jobs, permission gates, and admin review workflows.
+
+Ownership:
+
+Goutham owned the product architecture, system flow, research direction, prompts, and integration behavior while using Codex to accelerate implementation.
+
+Prototype flow:
+
+1. AI Client
+2. Managed Connector
+3. Tool Registry
+4. Provider MCP Server
+5. Governed Tool Result
+
+Important caveat:
+
+This should be described as AI-assisted research/prototyping, not as a production-grade MCP platform or enterprise SaaS claim.
+
+## Stack
+
+Backend:
+
+- Java
+- Kotlin
+- Spring Boot
+- Node.js
+- Express.js
+- Fastify
+- REST APIs
+- Microservices
+
+Scale and reliability:
+
+- Kotlin Coroutines
+- Caching
+- Circuit Breakers
+- Retry Policies
+- Timeout Management
+- OpenTelemetry
+- Distributed Tracing
+
+AI/MCP exploration:
+
+- Model Context Protocol
+- MCP Servers
+- Agentic Commerce
+- Tool Permissions
+- Provider Onboarding
+- Codex-Assisted Prototyping
+
+Databases and frontend:
+
+- MySQL
+- PostgreSQL
+- Redis
+- Angular
+- React
+- Next.js
