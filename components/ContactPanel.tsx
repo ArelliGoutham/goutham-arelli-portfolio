@@ -8,9 +8,9 @@ export function ContactPanel() {
         <p className="font-mono text-xs uppercase tracking-[0.26em] text-teal">Resume and contact</p>
         <div className="mt-4 grid gap-6 lg:grid-cols-[1fr_0.8fr] lg:items-end">
           <div>
-            <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">Open to backend, platform, and AI-adjacent engineering roles.</h2>
+            <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">Open to backend and platform roles with real systems ownership.</h2>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-panel/78">
-              Best fit: teams building reliable backend systems, payment or commerce workflows, platform services, or early MCP/agentic product infrastructure.
+              Best fit: teams building reliable backend systems, payment or commerce workflows, platform services, or agent-aware products where architecture and throughput matter.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">

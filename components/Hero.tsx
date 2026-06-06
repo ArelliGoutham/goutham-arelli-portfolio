@@ -41,13 +41,13 @@ export function Hero() {
 
       <div className="rounded-sm border border-ink/15 bg-panel p-5 shadow-dossier">
         <div className="flex items-center justify-between border-b border-ink/15 pb-3 font-mono text-xs uppercase tracking-[0.2em] text-ink/60">
-          <span>Current trajectory</span>
+          <span>Engineering direction</span>
           <ArrowDown className="h-4 w-4 text-signal" />
         </div>
         <div className="mt-5 space-y-4 text-base leading-7 text-ink/82">
-          <p>Production foundation: high-throughput backend services, observability, caching, and reliability patterns.</p>
-          <p>Emerging direction: MCP research, agentic commerce, secure workflow exploration, and Codex-assisted execution.</p>
-          <p className="font-mono text-sm text-signal">Applying backend experience to practical MCP and agent workflows.</p>
+          <p>Core strength: scalable backend services, throughput tuning, observability, caching, and reliability patterns.</p>
+          <p>Current exploration: MCP, agentic commerce, and secure tool workflows from a backend architecture perspective.</p>
+          <p className="font-mono text-sm text-signal">Keeping backend engineering current with agent-aware systems.</p>
         </div>
         <div className="mt-6 grid gap-3 border-t border-ink/15 pt-4 font-mono text-xs text-ink/68 sm:grid-cols-2">
           <span className="inline-flex items-center gap-2">

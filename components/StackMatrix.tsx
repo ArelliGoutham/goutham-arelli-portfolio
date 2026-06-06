@@ -7,7 +7,7 @@ export function StackMatrix() {
       <SectionHeader
         eyebrow="Stack"
         title="Tools grouped by how they show up in the work."
-        description="The emphasis is backend delivery and reliability, with MCP/AI listed as an active exploration area rather than an inflated specialization."
+        description="The emphasis is backend delivery, reliability, and system design. MCP and agentic commerce are current exploration areas where I am applying that foundation."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {stackGroups.map((group) => (

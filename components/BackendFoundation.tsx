@@ -14,9 +14,9 @@ export function BackendFoundation() {
   return (
     <section id="backend" className="border-b border-ink/15 py-14">
       <SectionHeader
-        eyebrow="Production foundation"
-        title="Backend systems work that carries the AI direction."
-        description="The AI/MCP story is grounded in production backend experience: high-throughput services, reliability controls, traceability, and distributed workflows."
+        eyebrow="Production backend work"
+        title="Beyond feature delivery: scale, reliability, and architecture."
+        description="My backend work is focused on how systems behave under real load: throughput, service boundaries, observability, failure handling, and reliable integrations."
       />
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-sm border border-ink/15 bg-panel p-5 shadow-dossier">
@@ -48,7 +48,7 @@ export function BackendFoundation() {
             <div className="flex items-start gap-4">
               <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-teal" />
               <p className="text-base leading-7">
-                This is the practical base for exploring MCP systems: service boundaries, failure modes, observability, and secure tool execution flows.
+                This is the same lens I bring to MCP and agentic systems: understand boundaries, failure modes, permissions, and operational visibility before scaling the workflow.
               </p>
             </div>
           </article>

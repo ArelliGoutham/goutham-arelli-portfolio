@@ -1,6 +1,6 @@
 # Goutham Arelli
 
-> Backend Engineer applying scalable systems experience to AI-agent infrastructure.
+> Backend Engineer focused on scalable systems, reliability, and emerging agentic workflows.
 
 This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderabad, India. It is most relevant for backend engineering, platform engineering, distributed systems, payments/commerce backend, and AI-adjacent engineering roles.
 
@@ -18,7 +18,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 - 4+ years backend/full-stack engineering experience.
 - 2000+ TPS EMI Offer Discovery capacity improvement.
 - 50% backend-call reduction through caching and lazy loading.
-- Current direction: MCP research, agentic commerce concepts, and Codex-assisted prototyping.
+- Current direction: researching MCP and agentic commerce from a backend architecture perspective.
 
 ## MCP Nexus Caveat
 

@@ -3,9 +3,9 @@ export const profile = {
   location: "Hyderabad, India",
   phone: "+91-7396437155",
   email: "arelligoutham@gmail.com",
-  headline: "Backend Engineer applying scalable systems experience to AI-agent infrastructure.",
+  headline: "Backend Engineer focused on scalable systems, reliability, and emerging agentic workflows.",
   summary:
-    "I build production backend systems around scalability, reliability, and observability. Recently I have been applying that foundation to MCP research, agentic commerce concepts, and Codex-assisted prototyping - using AI not just to write code, but to explore architecture, validate workflows, and get working systems shipped faster.",
+    "I work on backend systems where throughput, reliability, and observability matter. Recently I have been applying that engineering lens to MCP research and agentic commerce: studying how tools, providers, and workflows should be modeled, governed, and shipped faster with Codex-assisted development.",
   links: [
     { label: "Email", href: "mailto:arelligoutham@gmail.com" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/goutham-arelli/" },
@@ -17,6 +17,6 @@ export const profile = {
     { value: "4+", label: "years backend experience" },
     { value: "2000+ TPS", label: "EMI Offer Discovery capacity improvement" },
     { value: "50%", label: "backend-call reduction through caching and lazy loading" },
-    { value: "MCP", label: "research prototype and agentic commerce exploration" },
+    { value: "MCP", label: "researching agent-aware backend workflows" },
   ],
 } as const;

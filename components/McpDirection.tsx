@@ -28,9 +28,9 @@ export function McpDirection() {
   return (
     <section id="ai-mcp" className="border-b border-ink/15 py-14">
       <SectionHeader
-        eyebrow="AI/MCP direction"
-        title="Beginner in AI-agent infrastructure, not beginner in backend systems."
-        description="The goal is not to claim deep AI infrastructure expertise. The goal is to show how production backend knowledge helps evaluate MCP architecture, security boundaries, and agent-tool workflows."
+        eyebrow="Keeping up with platform trends"
+        title="Exploring MCP and agentic systems through a backend engineer's lens."
+        description="I am not positioning myself as an AI infrastructure specialist. I am learning the space actively and using backend fundamentals to reason about architecture, tool exposure, governance, and safe execution."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {steps.map((step) => (
