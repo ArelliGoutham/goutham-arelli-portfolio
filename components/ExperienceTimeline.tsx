@@ -7,7 +7,7 @@ export function ExperienceTimeline() {
   return (
     <section id="experience" className="section-shell">
       <SectionHeader
-        index="02"
+        index="03"
         eyebrow="Timeline"
         title="Previous systems experience across EdTech and telecom."
       />

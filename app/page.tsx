@@ -5,6 +5,7 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Hero } from "@/components/Hero";
 import { McpDirection } from "@/components/McpDirection";
 import { McpNexusCaseStudy } from "@/components/McpNexusCaseStudy";
+import { P3pCaseStudy } from "@/components/P3pCaseStudy";
 import { RevealSection } from "@/components/RevealSection";
 import { Shell } from "@/components/Shell";
 import { SignalStrip } from "@/components/SignalStrip";
@@ -19,6 +20,9 @@ export default function Home() {
       </RevealSection>
       <RevealSection delay={60}>
         <BackendFoundation />
+      </RevealSection>
+      <RevealSection delay={60}>
+        <P3pCaseStudy />
       </RevealSection>
       <RevealSection delay={60}>
         <ExperienceTimeline />

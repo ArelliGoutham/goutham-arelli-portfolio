@@ -1,30 +1,41 @@
 # Goutham Arelli
 
-> Backend Engineer focused on scalable systems, reliability, and emerging agentic workflows.
+> Backend Engineer focused on scalable systems, reliability, and enterprise agentic payments.
 
-This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderabad, India. It is most relevant for backend engineering, platform engineering, distributed systems, payments/commerce backend, and AI-adjacent engineering roles.
+This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderabad, India. It is most relevant for backend engineering, platform engineering, distributed systems, payments SDKs, and agentic commerce roles.
 
 ## Site Sections
 
 - Home: positioning, contact links, and resume download.
-- Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, reliability, and agentic commerce.
-- AI-assisted engineering direction: using LLM tools to move faster while still thinking about architecture, scale, security, and maintainable system design.
-- MCP Nexus: AI-assisted research prototype for a secure gateway over multiple registered provider MCPs.
+- Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, and reliability.
+- Pine Labs P3P: enterprise Payments Protocol SDKs (company product) — TypeScript/Python client and server libraries for x402 agentic payments.
 - Experience Timeline: Eduspeed Technologies and Cognizant.
-- Stack: backend, scale/reliability, AI/MCP exploration, databases, and frontend.
+- Engineering direction: using LLM tools carefully while owning architecture.
+- MCP Nexus: personal side-project research prototype (not company product).
+- Stack, education, and contact.
 
 ## Key Signals
 
 - 4+ years backend/full-stack engineering experience.
 - 2000+ TPS EMI Offer Discovery capacity improvement.
 - 50% backend-call reduction through caching and lazy loading.
-- Current direction: researching MCP and agentic commerce from a backend architecture perspective.
+- Enterprise P3P SDK ownership at Pine Labs for agentic payments.
 
-## MCP Nexus Caveat
+## P3P (Company)
 
-MCP Nexus is an AI-assisted research prototype, not a production SaaS claim. It started as a secure gateway where multiple provider MCPs can be registered once and exposed to AI clients through one controlled layer. Governance became the safety layer around that gateway: provider onboarding, tool permissions, token boundaries, auditability, rate limits, and confirmation flows.
+P3P is Pine Labs’ enterprise agentic payments protocol. Goutham’s role is SDK ownership and enterprise readiness across client and server SDKs (TypeScript and Python), including auth, capture flows, and Grantex spend controls.
 
-The work demonstrates architecture-led prototyping, research direction, workflow design, and AI-assisted implementation speed.
+Public packages:
+
+- https://www.npmjs.com/package/p3p-client-sdk
+- https://www.npmjs.com/package/p3p-server-sdk
+- https://pypi.org/project/pinelabs-online-p3p-client-sdk/
+- https://pypi.org/project/pinelabs-online-p3p-server-sdk/
+- https://grantex.dev
+
+## MCP Nexus (Personal)
+
+MCP Nexus is a personal AI-assisted research prototype, not a production SaaS claim and not a Pine Labs product.
 
 ## Important Links
 

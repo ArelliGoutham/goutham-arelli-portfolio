@@ -49,8 +49,8 @@ export function Hero() {
               <Download className="h-4 w-4" />
               Download Resume
             </a>
-            <a href="#mcp-nexus" className="btn-secondary">
-              View MCP Nexus
+            <a href="#p3p" className="btn-secondary">
+              View P3P SDKs
               <ArrowRight className="h-4 w-4" />
             </a>
             <a href={`mailto:${profile.email}`} className="btn-ghost">
@@ -97,9 +97,9 @@ export function Hero() {
               </p>
             </div>
             <div className="rounded-card border border-line bg-paper/70 p-4">
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-teal">Current exploration</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-teal">Enterprise focus</p>
               <p className="mt-2 text-sm leading-6 text-ink-soft sm:text-base sm:leading-7">
-                MCP gateways, agentic commerce, and secure tool workflows — designed with the same reliability mindset as production systems.
+                Pine Labs P3P SDKs for agentic payments — enterprise-ready client/server libraries, x402 flows, and Grantex-backed spend controls.
               </p>
             </div>
           </div>

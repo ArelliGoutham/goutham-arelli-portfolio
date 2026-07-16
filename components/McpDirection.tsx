@@ -28,10 +28,10 @@ export function McpDirection() {
   return (
     <section id="ai-mcp" className="section-shell">
       <SectionHeader
-        index="03"
+        index="04"
         eyebrow="Engineering direction"
         title="Using AI to move faster while thinking deeper about systems."
-        description="I am using LLM tools to increase execution speed, but the focus remains engineering ownership: architecture, tradeoffs, scale, security, and maintainable system design."
+        description="Alongside enterprise P3P work, I use LLM tools to increase execution speed — with ownership still on architecture, tradeoffs, scale, security, and maintainable system design."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {steps.map((step, index) => (

@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 export function StackMatrix() {
   return (
     <section id="stack" className="section-shell">
-      <SectionHeader index="05" eyebrow="Stack" title="Technical stack." />
+      <SectionHeader index="06" eyebrow="Stack" title="Technical stack." />
       <div className="grid gap-4 md:grid-cols-2">
         {stackGroups.map((group, index) => (
           <article key={group.title} className="stagger-item surface-card-hover p-5 sm:p-6">
