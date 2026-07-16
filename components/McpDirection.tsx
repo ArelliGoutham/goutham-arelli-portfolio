@@ -26,18 +26,26 @@ const steps = [
 
 export function McpDirection() {
   return (
-    <section id="ai-mcp" className="border-b border-ink/15 py-14">
+    <section id="ai-mcp" className="section-shell">
       <SectionHeader
+        index="03"
         eyebrow="Engineering direction"
         title="Using AI to move faster while thinking deeper about systems."
         description="I am using LLM tools to increase execution speed, but the focus remains engineering ownership: architecture, tradeoffs, scale, security, and maintainable system design."
       />
       <div className="grid gap-4 md:grid-cols-2">
-        {steps.map((step) => (
-          <article key={step.title} className="rounded-sm border border-ink/15 bg-panel/88 p-5">
-            <step.icon className="h-6 w-6 text-signal" />
-            <h3 className="mt-4 font-display text-xl font-bold text-ink">{step.title}</h3>
-            <p className="mt-3 text-base leading-7 text-ink/74">{step.text}</p>
+        {steps.map((step, index) => (
+          <article key={step.title} className="stagger-item surface-card-hover group p-5 sm:p-6">
+            <div className="flex items-start justify-between gap-4">
+              <span className="flex h-11 w-11 items-center justify-center rounded-card border border-line bg-signal-soft text-signal transition group-hover:border-signal/30 group-hover:bg-signal group-hover:text-white">
+                <step.icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <span className="font-mono text-[11px] text-ink-muted">0{index + 1}</span>
+            </div>
+            <h3 className="mt-5 font-display text-xl font-semibold tracking-tight text-ink">
+              {step.title}
+            </h3>
+            <p className="mt-3 text-base leading-7 text-ink-soft">{step.text}</p>
           </article>
         ))}
       </div>
