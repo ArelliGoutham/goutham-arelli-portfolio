@@ -9,35 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Deep navy / slate — payments & platform trust palette
         ink: {
-          DEFAULT: "#121a2b",
-          soft: "#2a3548",
-          muted: "#5c677a",
+          DEFAULT: "#0a1628",
+          soft: "#1e2d45",
+          muted: "#5b6b82",
         },
         paper: {
-          DEFAULT: "#f4efe4",
-          deep: "#ebe4d4",
+          DEFAULT: "#f2f5f9",
+          deep: "#e6ebf2",
         },
         panel: {
-          DEFAULT: "#fffaf2",
+          DEFAULT: "#ffffff",
           elevated: "#ffffff",
         },
         line: {
-          DEFAULT: "rgba(18, 26, 43, 0.12)",
-          strong: "rgba(18, 26, 43, 0.22)",
+          DEFAULT: "rgba(10, 22, 40, 0.10)",
+          strong: "rgba(10, 22, 40, 0.18)",
         },
         signal: {
-          DEFAULT: "#0b5cab",
+          DEFAULT: "#0b4f9c",
           soft: "#e8f1fb",
-          bright: "#1a73d4",
+          bright: "#1565c0",
         },
+        // Ledger / settlement positive accent
         teal: {
-          DEFAULT: "#0f766e",
-          soft: "#e6f4f2",
+          DEFAULT: "#0c6b5c",
+          soft: "#e5f4f1",
         },
+        // Cool steel highlight (replaces warm amber)
         amber: {
-          DEFAULT: "#b7791f",
-          soft: "#fbf3e4",
+          DEFAULT: "#3d5a80",
+          soft: "#e9eef5",
         },
       },
       fontFamily: {
@@ -46,15 +49,15 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       boxShadow: {
-        soft: "0 1px 0 rgba(18, 26, 43, 0.04), 0 12px 32px rgba(18, 26, 43, 0.06)",
-        lift: "0 2px 0 rgba(18, 26, 43, 0.04), 0 18px 48px rgba(18, 26, 43, 0.10)",
-        glow: "0 0 0 1px rgba(11, 92, 171, 0.12), 0 16px 40px rgba(11, 92, 171, 0.12)",
-        nav: "0 1px 0 rgba(18, 26, 43, 0.06), 0 12px 40px rgba(18, 26, 43, 0.08)",
-        inset: "inset 0 1px 0 rgba(255, 255, 255, 0.7)",
+        soft: "0 1px 0 rgba(10, 22, 40, 0.04), 0 10px 28px rgba(10, 22, 40, 0.05)",
+        lift: "0 2px 0 rgba(10, 22, 40, 0.04), 0 16px 40px rgba(10, 22, 40, 0.09)",
+        glow: "0 0 0 1px rgba(11, 79, 156, 0.14), 0 12px 32px rgba(11, 79, 156, 0.14)",
+        nav: "0 1px 0 rgba(10, 22, 40, 0.06), 0 10px 32px rgba(10, 22, 40, 0.07)",
+        inset: "inset 0 1px 0 rgba(255, 255, 255, 0.85)",
       },
       borderRadius: {
-        card: "14px",
-        pill: "999px",
+        card: "12px",
+        pill: "8px",
       },
       maxWidth: {
         content: "72rem",

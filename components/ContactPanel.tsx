@@ -9,17 +9,17 @@ export function ContactPanel() {
         <div className="pointer-events-none absolute -bottom-16 left-10 h-40 w-40 rounded-full bg-teal/20 blur-3xl" />
 
         <div className="relative">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-teal">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-teal">
             07 · Resume and contact
           </p>
           <div className="mt-5 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <h2 className="max-w-2xl font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                Open to backend and platform roles with real systems ownership.
+                Open to backend and payments platform roles with real systems ownership.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-panel/75 sm:text-lg">
-                Best fit: teams building reliable backend systems, payment or commerce workflows, platform
-                services, or agent-aware products where architecture and throughput matter.
+                Best fit: high-throughput payment systems, EMI and commerce workflows, reliability-focused
+                platform services, or agent-aware products where architecture and throughput matter.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 lg:justify-end">

@@ -23,7 +23,7 @@ export function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-teal" />
             </span>
             <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-              Open to backend & platform roles
+              Open to backend & payments roles
             </span>
           </div>
 
@@ -83,10 +83,10 @@ export function Hero() {
         </div>
 
         <aside className="surface-card relative flex flex-col overflow-hidden p-6 sm:p-7">
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-signal via-teal to-amber" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-ink via-signal to-teal" />
           <div className="flex items-center justify-between gap-3">
-            <p className="eyebrow">Engineering brief</p>
-            <span className="chip">v1 · 2026</span>
+            <p className="eyebrow">Systems brief</p>
+            <span className="chip">Payments · Platform</span>
           </div>
 
           <div className="mt-6 space-y-5">

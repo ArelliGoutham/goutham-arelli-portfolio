@@ -15,7 +15,7 @@ export function Education() {
         {education.map((item) => (
           <article key={item.institution} className="stagger-item surface-card-hover p-5 sm:p-6">
             <div className="flex items-start justify-between gap-4">
-              <span className="flex h-11 w-11 items-center justify-center rounded-card border border-line bg-amber-soft text-amber">
+              <span className="flex h-11 w-11 items-center justify-center rounded-card border border-line bg-signal-soft text-signal">
                 <GraduationCap className="h-5 w-5" aria-hidden="true" />
               </span>
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink-muted">{item.year}</p>

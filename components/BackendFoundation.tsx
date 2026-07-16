@@ -9,9 +9,9 @@ export function BackendFoundation() {
     <section id="backend" className="section-shell">
       <SectionHeader
         index="01"
-        eyebrow="Production backend work"
+        eyebrow="Production payments systems"
         title="Beyond feature delivery: scale, reliability, and architecture."
-        description="My backend work is focused on how systems behave under real load: throughput, service boundaries, observability, failure handling, and reliable integrations."
+        description="My backend work is focused on how payment and platform systems behave under real load: throughput, service boundaries, observability, failure handling, and reliable integrations."
       />
       <article className="stagger-item surface-card overflow-hidden">
         <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">

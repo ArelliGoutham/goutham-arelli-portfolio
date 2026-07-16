@@ -17,7 +17,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <footer className="border-t border-line bg-paper-deep/50">
         <div className="mx-auto flex w-full max-w-content flex-col gap-2 px-5 py-6 font-mono text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <p>© {new Date().getFullYear()} Goutham Arelli</p>
-          <p className="text-ink-muted/80">Backend systems · Reliability · MCP exploration</p>
+          <p className="text-ink-muted/80">Payments systems · Reliability · Platform engineering</p>
         </div>
       </footer>
     </div>

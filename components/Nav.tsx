@@ -67,7 +67,7 @@ export function Nav() {
               Goutham Arelli
             </span>
             <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted sm:block">
-              Backend Engineer
+              Backend · Payments
             </span>
           </span>
         </a>

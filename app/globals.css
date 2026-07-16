@@ -4,10 +4,10 @@
 
 :root {
   color-scheme: light;
-  --bg: #f4efe4;
-  --ink: #121a2b;
-  --signal: #0b5cab;
-  --ring: rgba(11, 92, 171, 0.45);
+  --bg: #f2f5f9;
+  --ink: #0a1628;
+  --signal: #0b4f9c;
+  --ring: rgba(11, 79, 156, 0.48);
   --nav-h: 4.25rem;
 }
 
@@ -27,12 +27,12 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 90% 55% at 8% -10%, rgba(11, 92, 171, 0.09), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 92% 8%, rgba(15, 118, 110, 0.07), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(183, 121, 31, 0.05), transparent 55%),
-    linear-gradient(rgba(18, 26, 43, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 26, 43, 0.022) 1px, transparent 1px);
-  background-size: auto, auto, auto, 40px 40px, 40px 40px;
+    radial-gradient(ellipse 85% 50% at 6% -8%, rgba(11, 79, 156, 0.10), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 96% 4%, rgba(12, 107, 92, 0.06), transparent 50%),
+    radial-gradient(ellipse 55% 35% at 50% 100%, rgba(10, 22, 40, 0.04), transparent 55%),
+    linear-gradient(rgba(10, 22, 40, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 22, 40, 0.028) 1px, transparent 1px);
+  background-size: auto, auto, auto, 36px 36px, 36px 36px;
   background-attachment: fixed;
 }
 
@@ -42,7 +42,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 50;
-  opacity: 0.035;
+  opacity: 0.028;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -54,7 +54,7 @@ a {
 
 ::selection {
   background: var(--signal);
-  color: #fffaf2;
+  color: #f8fafc;
 }
 
 :focus-visible {
@@ -64,7 +64,7 @@ a {
 
 @layer components {
   .surface-card {
-    @apply rounded-card border border-line bg-panel/90 shadow-soft backdrop-blur-[2px] transition duration-300 ease-out;
+    @apply rounded-card border border-line bg-panel/95 shadow-soft backdrop-blur-[2px] transition duration-300 ease-out;
   }
 
   .surface-card-hover {
@@ -72,7 +72,7 @@ a {
   }
 
   .chip {
-    @apply inline-flex items-center rounded-pill border border-line bg-paper/80 px-3 py-1 font-mono text-[11px] font-medium tracking-wide text-ink-soft;
+    @apply inline-flex items-center rounded-pill border border-line bg-paper px-3 py-1 font-mono text-[11px] font-medium tracking-wide text-ink-soft;
   }
 
   .btn-primary {
@@ -80,11 +80,11 @@ a {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-line bg-panel/90 px-5 py-2.5 font-mono text-sm font-medium text-ink shadow-soft transition duration-300 ease-out hover:-translate-y-0.5 hover:border-signal/40 hover:text-signal hover:shadow-lift;
+    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-line bg-panel px-5 py-2.5 font-mono text-sm font-medium text-ink shadow-soft transition duration-300 ease-out hover:-translate-y-0.5 hover:border-signal/45 hover:text-signal hover:shadow-lift;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-line/80 bg-transparent px-4 py-2 font-mono text-sm text-ink-soft transition duration-300 ease-out hover:border-signal/35 hover:bg-panel/70 hover:text-signal;
+    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-line/90 bg-transparent px-4 py-2 font-mono text-sm text-ink-soft transition duration-300 ease-out hover:border-signal/40 hover:bg-panel hover:text-signal;
   }
 
   .section-shell {
@@ -92,7 +92,7 @@ a {
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-signal;
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-signal;
   }
 }
 
