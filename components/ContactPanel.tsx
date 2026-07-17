@@ -74,6 +74,9 @@ export function ContactPanel() {
             <a href="/llms-full.txt" className="transition hover:text-teal">
               llms-full.txt
             </a>
+            <a href="https://github.com/ArelliGoutham/goutham-arelli-portfolio" target="_blank" rel="noreferrer" className="transition hover:text-teal">
+              Source
+            </a>
           </div>
         </div>
       </div>
