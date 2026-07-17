@@ -12,6 +12,7 @@ const links = [
   { href: "#stack", label: "Stack" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ] as const;
 
 export function Nav() {
