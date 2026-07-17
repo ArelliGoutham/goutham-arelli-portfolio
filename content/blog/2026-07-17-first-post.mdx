@@ -1,0 +1,56 @@
+---
+title: "How we scaled EMI Offer Discovery to 2000+ TPS"
+date: "2026-07-17"
+description: "A deep-dive into the caching, lazy loading, and throughput tuning work that cut backend calls by 50% and multiplied capacity by 8x."
+tags: [backend, kotlin, performance, caching]
+---
+
+## The problem
+
+Our EMI Offer Discovery service was buckling under peak load. Every checkout request
+fired multiple synchronous downstream calls — bank eligibility checks, offer catalogue
+fetches, and instalment plan calculations — before we could show a single offer to the user.
+
+At 250 TPS the latency was acceptable. Above that, timeouts cascaded.
+
+## What we changed
+
+### Aggressive response caching
+
+The biggest win was recognising that offer catalogues change slowly — at most once every
+few minutes — but we were fetching them on every single request.
+
+We introduced a two-tier cache:
+
+1. **In-process cache** (Caffeine) with a 60-second TTL for the hottest offer sets
+2. **Distributed cache** (Redis) with a 5-minute TTL as the source of truth
+
+This alone cut downstream calls by ~40%.
+
+### Lazy loading non-critical data
+
+Not every checkout screen needs the full instalment breakdown up front. We moved
+the instalment calculation to a deferred call triggered only when the user taps
+an offer — eliminating it from the critical path entirely.
+
+### Parallel eligibility checks
+
+Bank eligibility checks were sequential. We moved them to `Dispatchers.IO` coroutine
+scope and fanned out in parallel, collecting results with a structured concurrency pattern.
+
+```kotlin
+val results = bankIds.map { bankId ->
+    async { eligibilityClient.check(bankId, customerId) }
+}.awaitAll()
+```
+
+## Results
+
+- **2000+ TPS** sustained under load test (8× previous capacity)
+- **50% reduction** in total backend calls per checkout
+- P99 latency dropped from ~1.2 s to ~280 ms
+
+## What I'd do differently
+
+Start with observability. We had to instrument after the fact to understand the
+call patterns. Trace-first would have made the problem obvious on day one.
