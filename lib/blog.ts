@@ -31,7 +31,7 @@ function parseMeta(data: Record<string, unknown>, slug: string): PostMeta {
     title: String(data.title),
     date: normaliseDate(data.date),
     description: String(data.description),
-    tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
+    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
   };
 }
 
@@ -40,11 +40,16 @@ export function getAllPosts(): PostMeta[] {
   return fs
     .readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith(".mdx"))
-    .map((filename) => {
+    .flatMap((filename) => {
       const slug = filename.replace(/\.mdx$/, "");
-      const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf-8");
-      const { data } = matter(raw);
-      return parseMeta(data as Record<string, unknown>, slug);
+      try {
+        const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf-8");
+        const { data } = matter(raw);
+        return [parseMeta(data as Record<string, unknown>, slug)];
+      } catch (err) {
+        console.warn(`[blog] Skipping "${filename}":`, err);
+        return [];
+      }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -77,15 +78,21 @@ export function Nav() {
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {links.map((link) => {
             const isActive = active === link.href;
-            return (
+            const isPageRoute = !link.href.startsWith("#");
+            const className = `rounded-pill px-3 py-1.5 font-mono text-xs transition duration-200 ${
+              isActive
+                ? "bg-signal-soft text-signal"
+                : "text-ink-muted hover:bg-panel/80 hover:text-ink"
+            }`;
+            return isPageRoute ? (
+              <Link key={link.href} href={link.href} className={className}>
+                {link.label}
+              </Link>
+            ) : (
               <a
                 key={link.href}
                 href={link.href}
-                className={`rounded-pill px-3 py-1.5 font-mono text-xs transition duration-200 ${
-                  isActive
-                    ? "bg-signal-soft text-signal"
-                    : "text-ink-muted hover:bg-panel/80 hover:text-ink"
-                }`}
+                className={className}
               >
                 {link.label}
               </a>
@@ -121,18 +128,31 @@ export function Nav() {
           className="border-t border-line bg-paper/95 px-5 py-4 shadow-nav backdrop-blur-xl sm:px-8 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`rounded-card px-3 py-3 font-mono text-sm transition ${
-                  active === link.href ? "bg-signal-soft text-signal" : "text-ink-soft hover:bg-panel"
-                }`}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) => {
+              const isPageRoute = !link.href.startsWith("#");
+              const className = `rounded-card px-3 py-3 font-mono text-sm transition ${
+                active === link.href ? "bg-signal-soft text-signal" : "text-ink-soft hover:bg-panel"
+              }`;
+              return isPageRoute ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={className}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={className}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <a
               href="/goutham_arelli_resume.pdf"
               target="_blank"

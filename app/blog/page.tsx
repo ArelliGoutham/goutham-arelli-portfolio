@@ -22,7 +22,7 @@ export default function BlogPage() {
         </h1>
         <p className="mt-4 max-w-xl text-base leading-7 text-ink-soft">
           Notes on backend systems, payment infrastructure, reliability engineering, and
-          things I'm building or learning.
+          things I&apos;m building or learning.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (

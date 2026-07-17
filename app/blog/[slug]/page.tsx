@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -9,7 +10,11 @@ import { getAllPosts, getPost } from "@/lib/blog";
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  try {
+    return getAllPosts().map((post) => ({ slug: post.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,7 +36,7 @@ export default async function PostPage({ params }: Props) {
     notFound();
   }
 
-  const formatted = new Date(post.date).toLocaleDateString("en-US", {
+  const formatted = new Date(`${post.date}T12:00:00Z`).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -41,12 +46,12 @@ export default async function PostPage({ params }: Props) {
     <Shell>
       <article className="mx-auto max-w-2xl py-12 sm:py-16">
         <header className="mb-10">
-          <a
+          <Link
             href="/blog"
             className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted transition hover:text-signal"
           >
             ← Blog
-          </a>
+          </Link>
           <div className="mt-6 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span key={tag} className="chip">
