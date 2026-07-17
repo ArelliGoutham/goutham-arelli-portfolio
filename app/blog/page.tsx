@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Shell } from "@/components/Shell";
+import { BlogShell } from "@/components/BlogShell";
 import { BlogPostCard } from "@/components/BlogPostCard";
 import { getAllPosts } from "@/lib/blog";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = getAllPosts();
   return (
-    <Shell>
+    <BlogShell>
       <section className="py-12 sm:py-16">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-signal">
           Writing
@@ -35,6 +35,6 @@ export default function BlogPage() {
           )}
         </div>
       </section>
-    </Shell>
+    </BlogShell>
   );
 }

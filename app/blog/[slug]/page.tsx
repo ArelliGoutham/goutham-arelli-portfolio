@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { Shell } from "@/components/Shell";
+import { BlogShell } from "@/components/BlogShell";
 import { getAllPosts, getPost } from "@/lib/blog";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -19,9 +19,27 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://goutham-arelli-portfolio.vercel.app";
   try {
     const post = getPost(slug);
-    return { title: `${post.title} | Goutham Arelli`, description: post.description };
+    return {
+      title: `${post.title} | Goutham Arelli`,
+      description: post.description,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        type: "article",
+        url: `${siteUrl}/blog/${slug}`,
+        publishedTime: post.date,
+        tags: post.tags,
+        authors: ["Goutham Arelli"],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+      },
+    };
   } catch {
     return {};
   }
@@ -43,7 +61,7 @@ export default async function PostPage({ params }: Props) {
   });
 
   return (
-    <Shell>
+    <BlogShell>
       <article className="mx-auto max-w-2xl py-12 sm:py-16">
         <header className="mb-10">
           <Link
@@ -76,6 +94,6 @@ export default async function PostPage({ params }: Props) {
           />
         </div>
       </article>
-    </Shell>
+    </BlogShell>
   );
 }
