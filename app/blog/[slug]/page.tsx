@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import { BlogShell } from "@/components/BlogShell";
 import { getAllPosts, getPost } from "@/lib/blog";
+import { rehypeMermaid } from "@/lib/rehype-mermaid";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -88,7 +89,10 @@ export default async function PostPage({ params }: Props) {
             options={{
               mdxOptions: {
                 remarkPlugins: [remarkGfm],
-                rehypePlugins: [[rehypePrettyCode, { theme: "github-light" }]],
+                rehypePlugins: [
+                  rehypeMermaid,
+                  [rehypePrettyCode, { theme: "github-light" }],
+                ],
               },
             }}
           />

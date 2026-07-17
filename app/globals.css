@@ -300,3 +300,31 @@ a {
 .prose [data-rehype-pretty-code-figure] pre {
   background: #f6f8fa;
 }
+
+/* ── Mermaid diagrams ─────────────────────────────────────── */
+.mermaid-wrap {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f2f5f9;
+  border: 1px solid rgba(10, 22, 40, 0.10);
+  border-radius: 12px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid-wrap svg {
+  max-width: 100%;
+  height: auto;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Cluster / subgraph labels */
+.mermaid-wrap .cluster-label .nodeLabel,
+.mermaid-wrap .cluster-label {
+  font-family: var(--font-mono), monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: #5b6b82 !important;
+  color: #5b6b82 !important;
+}
