@@ -13,10 +13,4 @@ export const profile = {
     { label: "Scaler", href: "https://scaler.com/academy/profile/0446f67c7dc7" },
     { label: "Resume", href: "/goutham_arelli_resume.pdf" },
   ],
-  signals: [
-    { value: "4+", label: "years backend experience" },
-    { value: "2000+ TPS", label: "EMI Offer Discovery capacity improvement" },
-    { value: "50%", label: "backend-call reduction through caching and lazy loading" },
-    { value: "P3P", label: "enterprise SDKs for agentic payments at Pine Labs" },
-  ],
 } as const;
