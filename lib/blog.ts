@@ -16,6 +16,25 @@ export type Post = PostMeta & {
   content: string;
 };
 
+function normaliseDate(value: unknown): string {
+  if (value instanceof Date) return value.toISOString().split("T")[0];
+  return String(value ?? "");
+}
+
+function parseMeta(data: Record<string, unknown>, slug: string): PostMeta {
+  const missing = ["title", "date", "description"].filter((k) => !data[k]);
+  if (missing.length > 0) {
+    throw new Error(`Post "${slug}" missing required frontmatter: ${missing.join(", ")}`);
+  }
+  return {
+    slug,
+    title: String(data.title),
+    date: normaliseDate(data.date),
+    description: String(data.description),
+    tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
+  };
+}
+
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
   return fs
@@ -25,28 +44,21 @@ export function getAllPosts(): PostMeta[] {
       const slug = filename.replace(/\.mdx$/, "");
       const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf-8");
       const { data } = matter(raw);
-      return {
-        slug,
-        title: data.title as string,
-        date: data.date as string,
-        description: data.description as string,
-        tags: (data.tags as string[]) ?? [],
-      };
+      return parseMeta(data as Record<string, unknown>, slug);
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getPost(slug: string): Post {
-  const filepath = path.join(POSTS_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filepath)) throw new Error(`Post not found: ${slug}`);
-  const raw = fs.readFileSync(filepath, "utf-8");
+  let raw: string;
+  try {
+    raw = fs.readFileSync(path.join(POSTS_DIR, `${slug}.mdx`), "utf-8");
+  } catch {
+    throw new Error(`Post not found: ${slug}`);
+  }
   const { data, content } = matter(raw);
   return {
-    slug,
-    title: data.title as string,
-    date: data.date as string,
-    description: data.description as string,
-    tags: (data.tags as string[]) ?? [],
+    ...parseMeta(data as Record<string, unknown>, slug),
     content,
   };
 }
