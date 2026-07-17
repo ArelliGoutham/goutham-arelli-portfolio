@@ -6,6 +6,8 @@ on:
 
 jobs:
   lighthouse:
+    # Dependabot PRs only change deps, not content/design — skip Lighthouse to save CI minutes
+    if: github.actor != 'dependabot[bot]'
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:

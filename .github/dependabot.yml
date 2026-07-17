@@ -3,17 +3,21 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
-    open-pull-requests-limit: 10
+      interval: monthly
+    open-pull-requests-limit: 3
     groups:
-      # Group patch and minor updates together — safe to merge without manual review
-      minor-and-patch:
+      dependencies:
+        patterns:
+          - "*"
         update-types:
-          - "minor"
-          - "patch"
-    # Major version bumps are NOT grouped — each gets its own PR for individual assessment
+          - minor
+          - patch
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
