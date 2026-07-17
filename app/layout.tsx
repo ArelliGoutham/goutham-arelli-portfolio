@@ -21,7 +21,7 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://goutham-arelli-portfolio.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://goutham-arelli.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

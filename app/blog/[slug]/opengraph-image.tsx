@@ -152,7 +152,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
         >
           <span style={{ color: "#5b7fa0", fontSize: "15px" }}>{formatted}</span>
           <span style={{ color: "#0b4f9c", fontSize: "15px", letterSpacing: "0.04em" }}>
-            goutham-arelli-portfolio.vercel.app
+            goutham-arelli.vercel.app
           </span>
         </div>
       </div>

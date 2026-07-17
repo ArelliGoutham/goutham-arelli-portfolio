@@ -2,7 +2,7 @@
 
 Backend engineer at Pine Labs focused on high-throughput payment systems, reliability, and scalable platform services.
 
-🌐 **[goutham-arelli-portfolio.vercel.app](https://goutham-arelli-portfolio.vercel.app)** · [LinkedIn](https://www.linkedin.com/in/goutham-arelli/) · [Email](mailto:arelligoutham@gmail.com)
+🌐 **[goutham-arelli.vercel.app](https://goutham-arelli.vercel.app)** · [LinkedIn](https://www.linkedin.com/in/goutham-arelli/) · [Email](mailto:arelligoutham@gmail.com)
 
 ---
 

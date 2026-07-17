@@ -2,7 +2,7 @@
 
 ## Project
 Goutham Arelli's personal portfolio — Next.js App Router application deployed on Vercel.
-Live at: https://goutham-arelli-portfolio.vercel.app
+Live at: https://goutham-arelli.vercel.app
 
 ## Stack
 - **Framework**: Next.js 15 (App Router, Server Components by default)
