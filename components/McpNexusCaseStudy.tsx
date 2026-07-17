@@ -6,7 +6,7 @@ export function McpNexusCaseStudy() {
   return (
     <section id="mcp-nexus" className="section-shell">
       <SectionHeader
-        index="04"
+        index="05"
         eyebrow={mcpNexus.label}
         title={mcpNexus.name}
         description={mcpNexus.summary}
@@ -22,7 +22,7 @@ export function McpNexusCaseStudy() {
             <p className="mt-3 text-base leading-7 text-ink-soft">{mcpNexus.approach}</p>
           </article>
           <article className="stagger-item rounded-card border border-ink/20 bg-ink p-5 text-panel shadow-lift sm:p-6">
-            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-teal">
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-teal">
               Ownership
             </p>
             <p className="mt-3 text-base leading-7 text-panel/90">{mcpNexus.ownership}</p>
@@ -35,7 +35,7 @@ export function McpNexusCaseStudy() {
               <ShieldCheck className="h-4 w-4 text-teal" aria-hidden="true" />
               Prototype flow
             </div>
-            <span className="chip">Governed path</span>
+            <span className="chip">Personal · research</span>
           </div>
 
           <ol className="relative mt-6">

@@ -10,7 +10,7 @@ export function ContactPanel() {
 
         <div className="relative">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-teal">
-            07 · Resume and contact
+            08 · Resume and contact
           </p>
           <div className="mt-5 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
@@ -18,8 +18,9 @@ export function ContactPanel() {
                 Open to backend and payments platform roles with real systems ownership.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-panel/75 sm:text-lg">
-                Best fit: high-throughput payment systems, EMI and commerce workflows, reliability-focused
-                platform services, or agent-aware products where architecture and throughput matter.
+                Best fit: high-throughput payment systems, enterprise payment SDKs, EMI and agentic commerce
+                workflows, reliability-focused platform services, or agent-aware products where architecture
+                and throughput matter.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 lg:justify-end">

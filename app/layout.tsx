@@ -27,7 +27,7 @@ const googleAnalyticsId = "G-K6KRVJWG7C";
 export const metadata: Metadata = {
   title: "Goutham Arelli | Backend Engineer",
   description:
-    "Backend engineer applying scalable systems experience to MCP research, agentic commerce, and AI-assisted prototyping.",
+    "Backend engineer at Pine Labs building enterprise P3P payment SDKs and scalable systems for agentic commerce.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",

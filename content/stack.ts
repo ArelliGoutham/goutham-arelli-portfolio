@@ -4,6 +4,19 @@ export const stackGroups = [
     items: ["Java", "Kotlin", "Spring Boot", "Node.js", "Express.js", "Fastify", "REST APIs", "Microservices"],
   },
   {
+    title: "Payments / P3P",
+    items: [
+      "Pine Labs P3P",
+      "x402 / HTTP 402",
+      "UPI ReservePay",
+      "SBMD",
+      "TypeScript SDKs",
+      "Python SDKs",
+      "Grantex",
+      "Agentic Payments",
+    ],
+  },
+  {
     title: "Scale / Reliability",
     items: [
       "Kotlin Coroutines",
@@ -16,18 +29,13 @@ export const stackGroups = [
     ],
   },
   {
-    title: "AI / MCP Exploration",
+    title: "AI / Personal exploration",
     items: [
       "Model Context Protocol",
       "MCP Servers",
-      "Agentic Commerce",
       "Tool Permissions",
       "Provider Onboarding",
       "AI-Assisted Prototyping",
     ],
-  },
-  {
-    title: "Databases / Frontend",
-    items: ["MySQL", "PostgreSQL", "Redis", "Angular", "React", "Next.js"],
   },
 ] as const;
