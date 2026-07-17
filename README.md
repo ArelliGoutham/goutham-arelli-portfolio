@@ -1,42 +1,22 @@
-# Goutham Arelli Portfolio
+# Goutham Arelli — Backend Engineer
 
-Vercel-deployable portfolio for Goutham Arelli.
+Backend engineer at Pine Labs focused on high-throughput payment systems, reliability, and scalable platform services.
 
-## Local Development
+🌐 **[goutham-arelli-portfolio.vercel.app](https://goutham-arelli-portfolio.vercel.app)** · [LinkedIn](https://www.linkedin.com/in/goutham-arelli/) · [Email](mailto:arelligoutham@gmail.com)
 
-```bash
-npm install
-npm run dev
-```
+---
 
-Open `http://localhost:3000`.
+## What I work on
 
-## Production Build
+- High-throughput EMI and payment backend systems (Kotlin, Java, microservices)
+- Observability, caching, and reliability patterns under real production load
+- Enterprise payment SDKs — P3P (Pine Labs Payments Protocol) over x402 and UPI ReservePay
+- Agent tooling and MCP-based side projects
 
-```bash
-npm run build
-```
+## Stack
 
-## Deploy
+Kotlin · Java · TypeScript · Python · Spring Boot · Microservices · OpenTelemetry · Redis · PostgreSQL · Next.js
 
-Import this repository into Vercel.
+---
 
-Default build command:
-
-```bash
-npm run build
-```
-
-The output is handled by Next.js.
-
-## LLM and Search Discovery
-
-The site includes:
-
-- `public/llms.txt`
-- `public/llms-full.txt`
-- `app/sitemap.ts`
-- `app/robots.ts`
-- HTML `<link rel="alternate">` tags for `/llms.txt` and `/llms-full.txt`
-
-Set `NEXT_PUBLIC_SITE_URL` in Vercel after the production URL is known. If unset, the sitemap falls back to `https://goutham-arelli.vercel.app`.
+Built with Next.js and deployed on Vercel.
