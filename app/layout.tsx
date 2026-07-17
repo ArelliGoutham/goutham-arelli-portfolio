@@ -24,7 +24,10 @@ const mono = IBM_Plex_Mono({
 
 const googleAnalyticsId = "G-K6KRVJWG7C";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://goutham-arelli-portfolio.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Goutham Arelli | Backend Engineer",
   description:
     "Backend engineer at Pine Labs building enterprise P3P payment SDKs and scalable systems for agentic commerce.",
@@ -39,12 +42,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM-readable portfolio context" />
       </head>
       <body className={`${display.variable} ${body.variable} ${mono.variable} antialiased`}>
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -52,7 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             gtag("config", "${googleAnalyticsId}");
           `}
         </Script>
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
