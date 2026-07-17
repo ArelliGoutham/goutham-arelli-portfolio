@@ -1,0 +1,25 @@
+name: Dead Link Check
+
+on:
+  schedule:
+    - cron: "0 2 * * 1" # Every Monday at 2am UTC
+  workflow_dispatch:
+
+jobs:
+  linkcheck:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links in markdown and content files
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --exclude 'localhost'
+            --exclude 'mailto:'
+            README.md
+            content/**/*.ts
+          fail: true
