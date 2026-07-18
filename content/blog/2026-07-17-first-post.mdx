@@ -1,56 +1,125 @@
 ---
-title: "How we scaled EMI Offer Discovery to 2000+ TPS"
+title: "The checkout API that secretly ran at 6× the right latency"
 date: "2026-07-17"
-description: "A deep-dive into the caching, lazy loading, and throughput tuning work that cut backend calls by 50% and multiplied capacity by 8x."
-tags: [backend, kotlin, performance, caching]
+description: "A 350ms API that traces said was 27ms, a microservice split that wasn't, and the sequence of discoveries that led to 2000+ TPS with no new hardware."
+tags: [backend, performance, architecture, caching, kotlin]
 ---
 
-## The problem
+When a customer taps "Buy on EMI" at a merchant's checkout, the clock starts immediately. Under 200ms to figure out which banks offer EMI on their card, calculate every tenure and interest rate, apply merchant subventions, and return a ranked list. Every millisecond over budget is a conversion risk — merchants' integrations can't tell the difference between a slow API and a broken one.
 
-Our EMI Offer Discovery service was buckling under peak load. Every checkout request
-fired multiple synchronous downstream calls — bank eligibility checks, offer catalogue
-fetches, and instalment plan calculations — before we could show a single offer to the user.
+Our API was taking 300ms. And the strange part: when we looked at the traces, they showed 27ms.
 
-At 250 TPS the latency was acceptable. Above that, timeouts cascaded.
+---
 
-## What we changed
+## The system we inherited
 
-### Aggressive response caching
+The original design had three separate backend services forming a chain. A request from a merchant arrived at the first service, which decrypted it and checked the cache. On a cache miss, it forwarded the request to the second service, which resolved card details and coordinated enrichment data. That service then called the third, which finally reached Pricing Engine — the internal system that owns every bank EMI program, every interest rate, every subvention scheme in the network.
 
-The biggest win was recognising that offer catalogues change slowly — at most once every
-few minutes — but we were fetching them on every single request.
+On paper, a clean separation of concerns. In practice, the three services had never once deployed independently. They always scaled together. They always failed together. And every single request paid for the privilege of passing through all three.
 
-We introduced a two-tier cache:
+The deeper problem was the data moving between them. Pricing Engine returns an enormous response — a single reply can list a dozen banks, each offering six or more tenures, each tenure carrying full breakdowns of interest, processing fees, discounts, and subvention splits. Uncompressed, that's around 500KB of JSON per response. Each service received this data, deserialised it into roughly half a million in-memory objects, did something minor with it, re-serialised it, and handed it to the next service down the chain. The same 500KB response was deserialised three times before a merchant ever saw a result. Eight serialisation cycles total across the round trip.
 
-1. **In-process cache** (Caffeine) with a 60-second TTL for the hottest offer sets
-2. **Distributed cache** (Redis) with a 5-minute TTL as the source of truth
+We weren't moving data through a pipeline. We were repeatedly unpacking and repacking the same box.
 
-This alone cut downstream calls by ~40%.
+---
 
-### Lazy loading non-critical data
+## The first discovery: a number that shouldn't exist
 
-Not every checkout screen needs the full instalment breakdown up front. We moved
-the instalment calculation to a deferred call triggered only when the user taps
-an offer — eliminating it from the critical path entirely.
+The initial investigation started with load testing — eight concurrent users, a single pod, cache turned off so every request hit Pricing Engine directly.
 
-### Parallel eligibility checks
+The results came back at 350ms average latency. That felt wrong. Pricing Engine is a fast, well-maintained internal service. It responds in around 20ms. Even accounting for our serialisation overhead and two internal HTTP hops, 350ms implied something was spending most of its time not doing work.
 
-Bank eligibility checks were sequential. We moved them to `Dispatchers.IO` coroutine
-scope and fanned out in parallel, collecting results with a structured concurrency pattern.
+The answer was a single configuration line: the number of threads handling requests had been hardcoded to 32 on a pod running on two CPU cores.
 
-```kotlin
-val results = bankIds.map { bankId ->
-    async { eligibilityClient.check(bankId, customerId) }
-}.awaitAll()
-```
+Thirty-two threads. Two cores. The operating system was spending more time deciding which thread to run next than the threads were spending actually running. Every incoming request was queuing behind a scheduling backlog. The service technically handled the load — it just did it six times slower than it should have.
 
-## Results
+Changing that number to four — the right value for two cores — dropped average latency from 350ms to 54ms. The same code, the same infrastructure, the same Pricing Engine. Just the right thread count.
 
-- **2000+ TPS** sustained under load test (8× previous capacity)
-- **50% reduction** in total backend calls per checkout
-- P99 latency dropped from ~1.2 s to ~280 ms
+The rule that came out of this: thread pool sizes should never be hardcoded. They should always be derived from how many CPU cores the process can actually use.
 
-## What I'd do differently
+---
 
-Start with observability. We had to instrument after the fact to understand the
-call patterns. Trace-first would have made the problem obvious on day one.
+## The second discovery: the gap that traces couldn't see
+
+With the thread bug fixed, 54ms was a good number for cache-off mode. But the original 300ms production latency was still unexplained. We had traces showing 27ms for the Pricing Engine call. We had end-to-end latency of 300ms. The 273ms between those two numbers was simply missing from our observability.
+
+The cause was where the tracing span ended. The span closed when the HTTP response headers arrived from Pricing Engine — which happened in about 27ms. But the response body wasn't read until after the span closed. And reading the body meant taking that 500KB of JSON, allocating a full copy of it in memory as a string, and then parsing it into objects.
+
+Under load, with many requests in flight simultaneously, dozens of goroutines were queueing for threads just to start the deserialization work. The headers arrived in 27ms. Everything else took another 273ms. Our traces were technically accurate — and completely misleading.
+
+The fix was switching to a streaming deserialiser that started constructing objects directly from the incoming byte stream, instead of buffering the full response first. That removed the intermediate string allocation. Combined with bounding how many concurrent deserialisations could run at once, thread count under load dropped from around 450 back to a stable 290.
+
+---
+
+## The architectural question
+
+With both bugs fixed, the question became: what problem does the three-service split actually solve?
+
+The answer turned out to be: not much. The first service handled decryption and caching. The second handled card lookup and enrichment coordination. The third called Pricing Engine. But none of them made independent decisions, none had their own data store, and none ran at a different scale than the others. They were three deployment units operating as one logical operation.
+
+The two internal HTTP hops between them were pure overhead — network latency, serialisation cost, and thread management, adding up to nothing a merchant cared about.
+
+The new design collapsed all three into a single service. The same fifteen steps happened in the same order — decrypt, validate, check cache, resolve card, call Pricing Engine, enrich the response, apply merchant rules, write to cache, return — but now they happened inside one process, with no network calls between them. Internal HTTP hops went from two to zero. Serialisation cycles went from eight to two: one when the merchant request arrives, one when the Pricing Engine response goes out.
+
+Three JVM processes became one. Three Redis connections became one. Three sets of configuration, three deployment pipelines, three separate thread pools, all gone. Memory per running instance dropped from roughly 1.8GB across three pods to around 600MB for one.
+
+The typical objection to this kind of consolidation is losing the ability to deploy services independently. But these three services had never actually done that. The consolidation made the architecture reflect how the system actually behaved, rather than how it had been imagined.
+
+---
+
+## The number that changed everything
+
+Running without cache at full optimisation: 54ms average latency, 72 requests per second from a single two-core pod. That's respectable — but the real lever in the system was the cache.
+
+Pricing Engine data doesn't change moment to moment. For a given merchant and card combination, the offers available are stable for several minutes at a time. The system stores compressed responses in Redis with a five-minute expiry. On a cache hit, the service decompresses and returns in around 2ms.
+
+The arithmetic is straightforward. With cache enabled in production, a single pod can handle around 400 requests per second. Across five pods, that's 2000 TPS. With ten pods under peak load, the capacity scales proportionally.
+
+The 2000+ TPS figure isn't a hardware achievement — it's the cache doing its job. The software work was getting the cache-off path fast enough that cache misses don't hurt, and making the overall architecture clean enough that scaling out pods is operationally simple.
+
+---
+
+## What ZGC taught us
+
+At some point during this work, we ran an experiment with ZGC — a newer garbage collector designed to keep pause times near zero, which sounded appealing for a service handling latency-sensitive checkout traffic.
+
+Across 120,000 requests on the same pods, ZGC's P99 latency was 148ms. G1GC's P99 was 114ms. ZGC was worse, not better — and the reason was the hardware. ZGC runs its collection threads concurrently with the application, which is a significant advantage on large machines with many cores and generous memory. On constrained two-core pods, those concurrent GC threads competed directly with request-handling threads. The pause-free design became a throughput problem.
+
+The ceiling for ZGC is specific: it starts winning on pods with four or more CPUs and eight or more gigabytes of heap. Below that, it costs more than it saves.
+
+---
+
+## The ceiling that wasn't the application
+
+Near the end of load testing, we hit a ceiling at around 450 TPS with 100 concurrent threads, and average latency of 220ms. Service-side logs showed 53ms. The 167ms gap looked like another hidden bottleneck.
+
+It wasn't in the code. It was in the path between the load generator and the application — the API gateway, TLS handshaking, and network overhead. Little's Law makes this precise: 100 threads divided by 0.220 seconds average latency gives exactly 454 TPS. The application was doing its job; the measurement setup was the limit.
+
+This matters because diagnosing a performance ceiling incorrectly leads to wasted effort. Without per-service latency logging separate from gateway logs, this would have looked like an application problem. The lesson isn't about any specific tool — it's that understanding where your measurements are taken is as important as the measurements themselves.
+
+---
+
+## What we'd do differently
+
+**Instrument first.** The thread-count bug and the invisible 273ms deserialisation gap both hid for weeks because spans didn't cover the right phases. The measurement gap wasn't an accident — it was the default behaviour of the tracing library. Custom spans around every phase of request processing, including body reads, would have surfaced both issues immediately.
+
+**Question the service boundary before you build it.** The three-service split was inherited from an earlier design. If someone had asked early on whether these services could ever deploy or scale independently, the answer was no — and the single-service design would have been the starting point, not the result of six months of evidence.
+
+**Run the experiment anyway.** ZGC lost on these pods. But running it on production-equivalent infrastructure with a real workload gave us a concrete number: 34ms worse P99. "ZGC is better for P99" is a true statement in the right conditions. "ZGC is worse by 34ms on two-core pods" is what actually mattered here. General rules don't replace measurements on the actual system.
+
+---
+
+## The numbers
+
+| | Before | After |
+|---|---|---|
+| Average latency (no cache) | 350ms | 54ms |
+| Throughput per pod (no cache) | ~12 req/s | 72 req/s |
+| Throughput per pod (with cache) | ~40 req/s | ~400 req/s |
+| Production capacity (10 pods) | ~400 TPS | 2000+ TPS |
+| Internal HTTP hops per request | 2 | 0 |
+| Serialisation cycles per request | 8 | 2 |
+| Memory across all pods (same load) | ~1.8 GB | ~600 MB |
+| P99 latency | 200ms+ | 83ms |
+
+None of these improvements required new hardware, a larger database, or a different cloud provider. They came from removing work the system was doing unnecessarily — the extra hops, the extra serialisations, the extra threads, the extra string allocations. The fastest code is the code that doesn't run.

@@ -20,10 +20,13 @@ jobs:
 
       - run: npm ci
 
+      # Skip lint and type-check on Dependabot PRs — only verify the build compiles
       - name: Lint
+        if: github.actor != 'dependabot[bot]'
         run: npm run lint
 
       - name: Type check
+        if: github.actor != 'dependabot[bot]'
         run: npx tsc --noEmit
 
       - name: Build

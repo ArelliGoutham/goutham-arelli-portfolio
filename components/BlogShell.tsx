@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { BlogNav } from "@/components/BlogNav";
+import { MermaidRenderer } from "@/components/Mermaid";
 
 export function BlogShell({ children }: { children: ReactNode }) {
   return (
@@ -15,6 +16,7 @@ export function BlogShell({ children }: { children: ReactNode }) {
       <BlogNav />
 
       <main id="main" className="mx-auto w-full max-w-content px-5 pb-16 pt-4 sm:px-8 lg:px-10">
+        <MermaidRenderer />
         {children}
       </main>
 
