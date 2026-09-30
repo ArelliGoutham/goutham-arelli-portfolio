@@ -8,6 +8,7 @@ const links = [
   { href: "#backend", label: "Backend" },
   { href: "#p3p", label: "P3P" },
   { href: "#experience", label: "Experience" },
+  { href: "#goose", label: "Goose" },
   { href: "#ai-mcp", label: "Direction" },
   { href: "#mcp-nexus", label: "MCP Nexus" },
   { href: "#stack", label: "Stack" },

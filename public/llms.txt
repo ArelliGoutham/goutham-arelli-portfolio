@@ -10,6 +10,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 - Production Foundation: Pine Labs backend work around EMI systems, throughput, observability, and reliability.
 - Pine Labs P3P: enterprise Payments Protocol SDKs (company product) — TypeScript/Python client and server libraries for x402 agentic payments.
 - Experience Timeline: Eduspeed Technologies and Cognizant.
+- Goose: personal open-source Kafka-to-sink firehose built in Go (25x lighter than Java alternatives, 6,000+ msg/s, 5 sink types, production-hardened with Cosign/SBOM/Trivy).
 - Engineering direction: using LLM tools carefully while owning architecture.
 - MCP Nexus: personal side-project research prototype (not company product).
 - Stack, education, and contact.
@@ -20,6 +21,7 @@ This site is a portfolio for Goutham Arelli, a backend engineer based in Hyderab
 - 2000+ TPS EMI Offer Discovery capacity improvement.
 - 50% backend-call reduction through caching and lazy loading.
 - Enterprise P3P SDK ownership at Pine Labs for agentic payments.
+- Goose: 33MB Go binary replacing 786MB Java firehose, 6,017 msg/s, zero drops, v1.1.0 released.
 
 ## P3P (Company)
 
@@ -36,6 +38,10 @@ Public packages:
 ## MCP Nexus (Personal)
 
 MCP Nexus is a personal AI-assisted research prototype, not a production SaaS claim and not a Pine Labs product.
+
+## Goose (Personal open-source)
+
+Goose is a lightweight Kafka-to-sink firehose built in Go — a 25x lighter replacement for raystack firehose (786MB Java → 33MB Go). Supports 5 sink types (HTTP, gRPC, MongoDB, PostgreSQL, Redis), batch-poll consumer (6,017 msg/s), CEL filtering, protobuf→JSON, circuit breaker, DLQ, and full production hardening (Cosign, SBOM, Trivy, NetworkPolicy, PDB). v1.1.0 released at https://github.com/Goose-Kafka/goose.
 
 ## Important Links
 

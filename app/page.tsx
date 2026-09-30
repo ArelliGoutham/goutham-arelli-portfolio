@@ -2,6 +2,7 @@ import { BackendFoundation } from "@/components/BackendFoundation";
 import { ContactPanel } from "@/components/ContactPanel";
 import { Education } from "@/components/Education";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { GooseCaseStudy } from "@/components/GooseCaseStudy";
 import { Hero } from "@/components/Hero";
 import { McpDirection } from "@/components/McpDirection";
 import { McpNexusCaseStudy } from "@/components/McpNexusCaseStudy";
@@ -22,6 +23,9 @@ export default function Home() {
       </RevealSection>
       <RevealSection delay={60}>
         <ExperienceTimeline />
+      </RevealSection>
+      <RevealSection delay={60}>
+        <GooseCaseStudy />
       </RevealSection>
       <RevealSection delay={60}>
         <McpDirection />

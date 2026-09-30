@@ -105,6 +105,47 @@ Approach:
 
 Prototype a gateway that registers provider MCPs, routes approved tool calls, and adds governance controls such as validation, permissions, audit logs, rate limits, and confirmations.
 
+## Goose (Personal Open Source)
+
+Goose is a lightweight, cloud-native Kafka-to-sink firehose built in Go — a 25x lighter replacement for raystack firehose (786MB Java → 33MB Go binary). It is a personal open-source project in the Goose-Kafka GitHub org, not a Pine Labs product.
+
+Problem:
+
+Raystack firehose is the standard Kafka-to-HTTP firehose at scale, but it ships as a 786MB Java application with 50+ dependencies, ~300MB RAM at idle, and a connection pinning bug that causes uneven load distribution across backend pods.
+
+Approach:
+
+Rebuilt the firehose in Go with a worker-pool architecture, channel-based backpressure, contiguity-gated offset commits, batch-poll consumer with chunk splitting, and a pluggable sink interface supporting 5 sink types. Production-hardened with Cosign image signing, SBOM, Trivy scanning, NetworkPolicy, and PDB.
+
+Key metrics:
+
+- 33MB Go binary (25x smaller than Java firehose)
+- 13–23 MiB RAM at load (vs ~300MB Java)
+- 6,017 msg/s at 0ms sink delay, ~4,000 msg/s at 50ms delay
+- Zero message drops (network error retry fix)
+- <1s startup (vs 5–10s JVM)
+
+Features:
+
+- 5 sink types: HTTP, gRPC, MongoDB, PostgreSQL, Redis
+- CEL filtering + schema validation
+- Protobuf→JSON conversion via Stencil schema registry
+- Circuit breaker with sliding window
+- Dead Letter Queue (DLQ) with metadata headers
+- Batch-poll consumer with chunk splitting (ordered vs multi-worker modes)
+- 15 Prometheus metrics + OpenTelemetry traces
+- Helm chart with HPA, NetworkPolicy, PDB, security context
+- TDD: 82 unit tests (-race), 18 integration tests
+
+Public links:
+
+- https://github.com/Goose-Kafka/goose — source code, v1.1.0 released
+- https://goose-kafka.mintlify.site/ — documentation (35+ pages)
+- https://goose-kafka.github.io/goose/ — marketing website
+- https://github.com/Goose-Kafka/goose-integration-test — integration tests
+
+Ownership: Entire project end-to-end — architecture, implementation, CI/CD, Docker/Helm, integration tests, load testing, documentation, release management. Used AI-assisted development (Copilot CLI) as the implementer while directing all architectural decisions.
+
 ## Education
 
 - Scaler Neovarsity — MS in Computer Science (2025)

@@ -6,7 +6,7 @@ export function Education() {
   return (
     <section id="education" className="section-shell">
       <SectionHeader
-        index="07"
+        index="08"
         eyebrow="Education"
         title="Academic foundation behind the engineering work."
         description="Formal study across computer science, electronics, IoT, and software systems complements hands-on backend experience."

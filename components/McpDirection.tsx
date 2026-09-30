@@ -28,7 +28,7 @@ export function McpDirection() {
   return (
     <section id="ai-mcp" className="section-shell">
       <SectionHeader
-        index="04"
+        index="05"
         eyebrow="Engineering direction"
         title="Using AI to move faster while thinking deeper about systems."
         description="Alongside enterprise P3P work, I use LLM tools to increase execution speed — with ownership still on architecture, tradeoffs, scale, security, and maintainable system design."
