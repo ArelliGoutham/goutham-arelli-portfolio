@@ -6,7 +6,7 @@ export function McpNexusCaseStudy() {
   return (
     <section id="mcp-nexus" className="section-shell">
       <SectionHeader
-        index="05"
+        index="06"
         eyebrow={mcpNexus.label}
         title={mcpNexus.name}
         description={mcpNexus.summary}
